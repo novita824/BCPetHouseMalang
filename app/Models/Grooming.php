@@ -9,6 +9,7 @@ class Grooming extends Model
 {
     use HasFactory;
     protected $table = 'grooming';
+    protected $primaryKey = 'id';
     
     protected $fillable = [
         'nama',

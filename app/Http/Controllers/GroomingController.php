@@ -29,6 +29,35 @@ class GroomingController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $pagination);
     }
 
+    public function create()
+    {
+        //
+        return view('Grooming.groomingcreate');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        $request->validate([
+            'nama' => 'required',
+            'namahewan' => 'required',
+            'jenishewan' => 'required',
+            'umur' => 'required',
+            'alamat' => 'required',
+            'notelp' => 'required',
+            'tipegrooming' => 'required',
+            'sediapetcargo' => 'required',
+        ]);
+        Grooming::create($request->all());
+
+        return redirect()->route('Grooming.groomingindex')->with('succes','Data Berhasil di Input');
+    }
 
     /**
      * Show the form for editing the specified resource.

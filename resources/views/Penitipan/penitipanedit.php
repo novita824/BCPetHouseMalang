@@ -147,7 +147,7 @@
                         <div class="x_content">
                             <br>
                             <form class="form-horizontal form-label-left input_mask" method="POST"
-                                enctype="multipart/form-data" action="{{route('penitipanupdate',$penitipan->id)}}">
+                                enctype="multipart/form-data" action="{{route('penitipanupdate',$data->id)}}">
                                 @csrf
                                 @method('PUT')
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">

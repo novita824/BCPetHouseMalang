@@ -127,7 +127,7 @@
                           <td> Rp 40.000,00 </td>
                           <td><label class="badge badge-info">Terlayani</label></td>
                           <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('groomingedit',$grooming->id)}}">Edit</a>
-                            <a href="{{ url('login') }}" class="btn btn-gradient-danger btn-sm">Hapus</a></td>
+                            <a class="btn btn-gradient-danger btn-sm" href="{{ route('groomingdestroy',$grooming->id)}}">Hapus</a></td>
                         </tr>
                         <tr>
                           <td> Herman Beck </td>

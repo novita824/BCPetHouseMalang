@@ -72,7 +72,7 @@ class GroomingController extends Controller
         return view('Grooming.groominganedit', compact('grooming'));
     }
 
-    /**
+    /*  *
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

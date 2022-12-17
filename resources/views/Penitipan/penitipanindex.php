@@ -128,8 +128,10 @@
                           <td> 11/12/2022 </td>
                           <td> Rp 20.000,00 </td>
                           <td><label class="badge badge-info">Selesai</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
+                          <td>
+		                        <a href="{{ route('penitipan.update', $penitipan->id) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
+                            <a href="/penitipan/hapus/{{ $penitipan->$id }}"class="btn btn-gradient-danger btn-sm">Hapus</a>
+	                        </td>
                         </tr>
                         <tr>
                           <td> Herman Beck </td>

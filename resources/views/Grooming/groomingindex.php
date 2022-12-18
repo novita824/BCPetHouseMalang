@@ -135,8 +135,8 @@
                           <td> 05/12/2002 </td>
                           <td> Rp 40.000,00 </td>
                           <td><label class="badge badge-danger">Belum Terlayani</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
+                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('groomingedit',$grooming->id)}}">Edit</a>
+                            <a class="btn btn-gradient-danger btn-sm" href="{{ route('groomingdestroy',$grooming->id)}}">Hapus</a></td>
                         </tr>
                         <tr>
                           <td> Herman Beck </td>
@@ -144,8 +144,8 @@
                           <td> 05/12/2002 </td>
                           <td> Rp 40.000,00 </td>
                           <td><label class="badge badge-info">Terlayani</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
+                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('groomingedit',$grooming->id)}}">Edit</a>
+                            <a class="btn btn-gradient-danger btn-sm" href="{{ route('groomingdestroy',$grooming->id)}}">Hapus</a></td>
                         </tr>
                         <tr>
                           <td> Herman Beck </td>
@@ -153,8 +153,8 @@
                           <td> 05/12/2002 </td>
                           <td> Rp 40.000,00 </td>
                           <td><label class="badge badge-danger">Belum Terlayani</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
+                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('groomingedit',$grooming->id)}}">Edit</a>
+                            <a class="btn btn-gradient-danger btn-sm" href="{{ route('groomingdestroy',$grooming->id)}}">Hapus</a></td>
                         </tr>
                         <tr>
                           <td> Herman Beck </td>
@@ -162,8 +162,8 @@
                           <td> 05/12/2002 </td>
                           <td> Rp 40.000,00 </td>
                           <td><label class="badge badge-info">Terlayani</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
+                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('groomingedit',$grooming->id)}}">Edit</a>
+                            <a class="btn btn-gradient-danger btn-sm" href="{{ route('groomingdestroy',$grooming->id)}}">Hapus</a></td>
                         </tr>
                       </tbody>
                     </table>

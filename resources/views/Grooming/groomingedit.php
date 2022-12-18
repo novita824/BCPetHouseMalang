@@ -204,7 +204,7 @@ document.getElementById('logout-form').submit();">
                                     <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback-left">
                                         <br><br>
                                         <button type="submit" class="btn btn-success">Submit</button>
-                                        <a class="btn btn-primary" href="{{ route('kategoriproduk.index') }}">Cancel</a>
+                                        <a class="btn btn-primary" href="{{ route('Grooming.groomingindex') }}">Cancel</a>
                                         <a class="btn btn-danger" type="reset">Reset</a>
                                     </div>
                                 </div>

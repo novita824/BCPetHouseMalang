@@ -184,15 +184,24 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach ($produk as $pk)
                         <tr>
-                          <td> Herman Beck </td>
-                          <td> Bolt Tuna 500g </td>
-                          <td> 1 </td>
-                          <td> Rp 12.000,00 </td>
-                          <td><label class="badge badge-info">Terbayar</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
+                          <td>{{ ++$i }}</td>
+                          <td>{{ $pk->nama }}</td>
+                          <td>{{ $pk->produk }}</td>
+                          <td>{{ $pk->totalproduk }}</td>
+                          <td>{{ $pk->totalharga }}</td>
+                          <td>
+                          <form action="{{ route('Produk.destroy',$produk->id) }}" method="POST">
+                            <a class="btn btn-primary" href="{{ route('Produk.edit',$produk->id) }}">Edit</a>
+                          @csrf
+                          @method('DELETE')
+      
+                          <button type="submit" class="btn btn-danger">Delete</button>
+                          </form>
+                          </td>
                         </tr>
+                        @endforeach
                         <tr>
                           <td> Herman Beck </td>
                           <td> Bolt Tuna 500g </td>

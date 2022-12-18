@@ -8,6 +8,7 @@ use App\Http\Controllers\GroomingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PenitipanController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\FormGroomingController;
 
 /*
@@ -38,6 +39,7 @@ use App\Http\Controllers\FormGroomingController;
 // Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::resource('Grooming', GroomingController::class);
 Route::resource('Penitipan', PenitipanController::class);
+Route::resource('Produk', ProdukController::class);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/formGrooming', function (){

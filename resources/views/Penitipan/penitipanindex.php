@@ -129,7 +129,7 @@
                           <td> Rp 20.000,00 </td>
                           <td><label class="badge badge-info">Selesai</label></td>
                           <td>
-		                        <a href="{{ route('penitipan.edit', $Penitipan->id) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
+		                        <a href="{{ route('penitipan.penitipanedit', $Penitipan->id) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
                             <a href="/penitipan/hapus/{{ $penitipan->$id }}"class="btn btn-gradient-danger btn-sm">Hapus</a>
 	                        </td>
                         </tr>

@@ -147,15 +147,13 @@
                         <div class="x_content">
                             <br>
                             <form class="form-horizontal form-label-left input_mask" method="POST"
-                                enctype="multipart/form-data" action="{{route('penitipanupdate',$data->id)}}">
+                                enctype="multipart/form-data" action="{{route('penitipan.penitipanedit',$data->id)}}">
                                 @csrf
                                 @method('PUT')
-                                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                    <label for="fullname">Nama Hewan:</label>
-                                    <input type="text" class="form-control has-feedback-left" placeholder="Nama Hewan" name="namahewan" required value="{{$Penitipan->namahewan}}">
-                                    <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                                </div>
-
+                                <div class="form-group">
+                                  <label for="Nama">Nama</label>
+                                  <input type="Nama" name="Nama" class="formcontrol" id="Nama" value="{{ $Penitipan->Nama }}" ariadescribedby="Nama" >
+                                </div>   
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Nama Pemilik :</label>

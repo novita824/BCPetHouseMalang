@@ -43,7 +43,7 @@ class PenitipanController extends Controller
     {
         $this->authorize('admin');
         $Penitipan = Penitipan::find($id);
-        return view('Peniitipan.penitipanedit', compact('penitipan'));
+        return view('Penitipan.penitipanedit', compact('penitipan'));
     }
 
     /**

@@ -152,76 +152,76 @@
                                 @method('PUT')
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Nama Hewan:</label>
-                                    <input type="text" class="form-control has-feedback-left" placeholder="Nama Hewan" name="namahewan" required value="{{$penitipan->namahewan}}">
+                                    <input type="text" class="form-control has-feedback-left" placeholder="Nama Hewan" name="namahewan" required value="{{$Penitipan->namahewan}}">
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                 </div>
 
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Nama Pemilik :</label>
-                                    <input type="text" class="form-control has-feedback-right" placeholder="Nama Pemilik" name="namapemilik" required value="{{$penitipan->namapemilik}}">
+                                    <input type="text" class="form-control has-feedback-right" placeholder="Nama Pemilik" name="namapemilik" required value="{{$Penitipan->namapemilik}}">
                                     <span class="fa fa-home form-control-feedback right" aria-hidden="true"></span>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Alamat :</label>
-                                    <input type="text" class="form-control has-feedback-left" placeholder="Alamat" name="alamat" required value="{{$penitipan->alamat}}">
+                                    <input type="text" class="form-control has-feedback-left" placeholder="Alamat" name="alamat" required value="{{$Penitipan->alamat}}">
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Sedia Pet Cargo? (Ya/Tidak) :</label>
-                                    <input type="text" class="form-control has-feedback-right" placeholder="Sedia Pet Cargo? (Ya/Tidak)" name="sediapetcargo" required value="{{$penitipan->sediapetcargo}}">
+                                    <input type="text" class="form-control has-feedback-right" placeholder="Sedia Pet Cargo? (Ya/Tidak)" name="sediapetcargo" required value="{{$Penitipan->sediapetcargo}}">
                                     <span class="fa fa-home form-control-feedback right" aria-hidden="true"></span>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Sedia Kandang? (Ya/Tidak) :</label>
-                                    <input type="text" class="form-control has-feedback-left" placeholder="Sedia Kandang? (Ya/Tidak) " name="sediakandang" required value="{{$penitipan->sediakandang}}">
+                                    <input type="text" class="form-control has-feedback-left" placeholder="Sedia Kandang? (Ya/Tidak) " name="sediakandang" required value="{{$Penitipan->sediakandang}}">
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                 </div>
 
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Tanggal Penginapan :</label>
-                                    <input type="text" class="form-control has-feedback-right" placeholder="Tanggal Penginapan" name="tanggalpenginapan" required value="{{$penitipan->tanggalpenginapan}}">
+                                    <input type="text" class="form-control has-feedback-right" placeholder="Tanggal Penginapan" name="tanggalpenginapan" required value="{{$Penitipan->tanggalpenginapan}}">
                                     <span class="fa fa-home form-control-feedback right" aria-hidden="true"></span>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Jenis Paket :</label>
-                                    <input type="text" class="form-control has-feedback-left" placeholder="Jenis Paket" name="jenispaket" required value="{{$penitipan->jenispaket}}">
+                                    <input type="text" class="form-control has-feedback-left" placeholder="Jenis Paket" name="jenispaket" required value="{{$Penitipan->jenispaket}}">
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Berapa Kali Makan  :</label>
-                                    <input type="text" class="form-control has-feedback-left" placeholder="Berapa Kali Makan" name="berapakalimakan" required value="{{$penitipan->berapakalimakan}}">
+                                    <input type="text" class="form-control has-feedback-left" placeholder="Berapa Kali Makan" name="berapakalimakan" required value="{{$Penitipan->berapakalimakan}}">
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Pakan :</label>
-                                    <input type="text" class="form-control has-feedback-right" placeholder="Pakan" name="pakan" required value="{{$penitipan->pakan}}">
+                                    <input type="text" class="form-control has-feedback-right" placeholder="Pakan" name="pakan" required value="{{$enitipan->pakan}}">
                                     <span class="fa fa-home form-control-feedback right" aria-hidden="true"></span>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Riwayat Vaksin :</label>
-                                    <input type="text" class="form-control has-feedback-left" placeholder="Riwayat Vaksin " name="riwayatvaksin" required value="{{$penitipan->riwayatvaksin}}">
+                                    <input type="text" class="form-control has-feedback-left" placeholder="Riwayat Vaksin " name="riwayatvaksin" required value="{{$Penitipan->riwayatvaksin}}">
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                 </div>
 
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Kontak :</label>
-                                    <input type="text" class="form-control has-feedback-right" placeholder="Kontak" name="kontak" required value="{{$penitipan->kontak}}">
+                                    <input type="text" class="form-control has-feedback-right" placeholder="Kontak" name="kontak" required value="{{$Penitipan->kontak}}">
                                     <span class="fa fa-home form-control-feedback right" aria-hidden="true"></span>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                     <label for="fullname">Riwayat Penyakit :</label>
-                                    <input type="text" class="form-control has-feedback-left" placeholder="Riwayat Penyakit" name="riwayatpenyakit" required value="{{$penitipan->riwayatpenyakit}}">
+                                    <input type="text" class="form-control has-feedback-left" placeholder="Riwayat Penyakit" name="riwayatpenyakit" required value="{{$Penitipan->riwayatpenyakit}}">
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                 </div>
 

@@ -112,9 +112,13 @@
                       <thead>
                         <tr>
                           <th> Nama </th>
-                          <th> Paket </th>
-                          <th> Tanggal Booking </th>
-                          <th> Harga </th>
+                          <th> Nama Hewan </th>
+                          <th> Jenis Hewan </th>
+                          <th> Umur </th>
+                          <th> Alamat </th>
+                          <th> No.Telepon </th>
+                          <th> Tipe Grooming </th>
+                          <th> Sedia Pet Cargo?</th>
                           <th> Status </th>
                           <th> Action </th>
                         </tr>
@@ -122,12 +126,16 @@
                       <tbody>
                         <tr>
                           <td> Herman Beck </td>
+                          <td> Blacky </td>
+                          <td> Kucing Persia </td>
+                          <td> 2 bulan </td>
+                          <td> sawojajar </td>
+                          <td> 0888819273726 </td>
                           <td> Regular </td>
-                          <td> 05/12/2002 </td>
-                          <td> Rp 40.000,00 </td>
+                          <td> ya </td>
                           <td><label class="badge badge-info">Terlayani</label></td>
-                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('groomingedit',$grooming->id)}}">Edit</a>
-                            <a class="btn btn-gradient-danger btn-sm" href="{{ route('groomingdestroy',$grooming->id)}}">Hapus</a></td>
+                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('grooming.edit',$grooming->id)}}">Edit</a>
+                            <a class="btn btn-gradient-danger btn-sm" href="{{ route('grooming.destroy',$grooming->id)}}">Hapus</a></td>
                         </tr>
                         <tr>
                           <td> Herman Beck </td>

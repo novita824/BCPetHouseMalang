@@ -6,6 +6,7 @@ use App\Models\Penitipan;
 use Illuminate\Http\Request;
 use \Illuminate\Http\Response;
 use Throwable;
+use Illuminate\Support\Facades\DB;
 
 class PenitipanController extends Controller
 {
@@ -31,6 +32,12 @@ class PenitipanController extends Controller
 
         return view('Penitipan.penitipanindex', compact('Penitipan'))
             ->with('i', (request()->input('page', 1) - 1) * $pagination);
+        
+        // mengambil data dari table pegawai
+    	$Penitipan = DB::table('penitipan')->get();
+ 
+    	// mengirim data pegawai ke view index
+    	return view('index',['pegawai' => $Penitipan]);
     }
 
     /**

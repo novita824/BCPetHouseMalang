@@ -98,85 +98,13 @@ document.getElementById('logout-form').submit();">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Penitipan</h2>
-          <p>Isi form terlebih dahulu untuk menitipkan hewan anda</p>
+          <h2>Checkout Product</h2>
+          <p>Pembayaran dapat melalui</p>
         </div>
-
-        <div class="row">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info"></br>
-              <h4>Paket Penitipan</h4></br></br>
-                <h4>* Paket Kos :</h4>
-                <p>Rp 20.000,00</p>
-                <h4>* Paket Losman :</h4>
-                <p>Rp 25.000,00</p>
-                <h4>* Paket Apartemen :</h4>
-                <p>Rp 35.000,00</p>
-            </div>
-          </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form name="google-sheet" action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Nama Hewan</label>
-                  <input type="text" name="namahewan" class="form-control" id="subject" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Nama Pemilik</label>
-                  <input type="text" class="form-control" name="email" id="subject" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Alamat (beserta sharelock)</label>
-                <input type="text" class="form-control" name="alamat" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Sedia Pet Cargo (Ya/Tidak)</label>
-                <input type="text" class="form-control" name="sediapetcargo" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Sedia Kandang (Ya/Tidak)</label>
-                <input type="text" class="form-control" name="sediakandang" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Tanggal Penitipan (Tanggal h0-hx)</label>
-                <input type="text" class="form-control" name="tanggalpenitipan" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Jenis Paket</label>
-                <input type="text" class="form-control" name="jenispaket" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">1. Sehari biasa makan berapa kali</label>
-                <input type="text" class="form-control" name="berapakalimakan" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">2. Pakan</label>
-                <input type="text" class="form-control" name="pakan" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">3. Riwayat Vaksin</label>
-                <input type="text" class="form-control" name="riwayatvaksin" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">4. Kontak yang bisa dihubungi (WhatsApp)</label>
-                <input type="text" class="form-control" name="kontak" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">5. Riwayat Penyakit</label>
-                <input type="text" class="form-control" name="riwayatpenyakit" id="subject" required>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Kirim</button></div>
-            </form>
-          </div>
-
+        
+        <div class="social-links mt-3">
+            <h4>WhatsApp</h4>
+            <a href="https://bit.ly/BCPetHouse" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
         </div>
 
       </div>

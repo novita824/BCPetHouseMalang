@@ -48,6 +48,9 @@ Route::get('/formGrooming', function (){
 Route::get('/formPenitipan', function (){
     return view('FormPenitipan');
 });
+Route::get('/pembayaran', function (){
+    return view('pembayaran');
+});
 // Route::get('product', [])
 
 Auth::routes();

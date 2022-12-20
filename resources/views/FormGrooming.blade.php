@@ -120,7 +120,7 @@ document.getElementById('logout-form').submit();">
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form name="google-sheet" action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group">
                   <label for="name">Nama</label>
@@ -132,7 +132,7 @@ document.getElementById('logout-form').submit();">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Jenis Hewan</label>
-                  <input type="email" class="form-control" name="jenishewan" id="email" required>
+                  <input type="text" class="form-control" name="jenishewan" id="subject" required>
                 </div>
               </div>
               <div class="form-group">
@@ -149,7 +149,7 @@ document.getElementById('logout-form').submit();">
               </div>
               <div class="form-group">
                 <label for="name">Tipe Grooming</label>
-                <input type="text" class="form-control" name="tipe" id="subject" required>
+                <input type="text" class="form-control" name="tipegrooming" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">Sedia Pet Cargo (Ya/Tidak)</label>
@@ -248,6 +248,20 @@ document.getElementById('logout-form').submit();">
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwvCm5aR-ofLsnF2s5Fc-Lw5vNmrjz5xjs0KIHhOdunXYEalX2EzQZnUhpHRZHsKsHROg/exec'
+      const form = document.forms['google-sheet']
+      
+      form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => $("#form_alerts").html("<div class='alert alert-success'>Data berhasil dikirim.</div>"))
+          .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Data gagal terkirim!.</div>"))
+          form.reset();
+      })
+  </script>
 
 </body>
 

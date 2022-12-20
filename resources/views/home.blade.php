@@ -185,10 +185,10 @@ document.getElementById('logout-form').submit();">
                         <div class="portfolio-info">
                             <h4>Wishkas Tuna</h4>
                             <p>Rp 23.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
+                            <a href="assets/img/produk/whiskastuna.jpg" data-gallery="public"
+                                class="portfolio-lightbox preview-link" title="Wishkas Tuna"><i class="bx bx-plus"></i></a>
+                            <a href="pembayaran" class="money-link" title="Pembayaran"><i
+                                    class="bx bx-money"></i></a>
                         </div>
                     </div>
 
@@ -198,10 +198,10 @@ document.getElementById('logout-form').submit();">
                         <div class="portfolio-info">
                             <h4>Felibite 500g</h4>
                             <p>Rp 13.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
+                            <a href="assets/img/produk/felibite1.jpg" data-gallery="public"
+                                class="portfolio-lightbox preview-link" title="Felibite 500g"><i class="bx bx-plus"></i></a>
+                            <a href="pembayaran" class="money-link" title="Pembayaran"><i
+                                    class="bx bx-money"></i></a>
                         </div>
                     </div>
 
@@ -211,10 +211,10 @@ document.getElementById('logout-form').submit();">
                         <div class="portfolio-info">
                             <h4>Felibite 500g</h4>
                             <p>Rp 13.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
+                            <a href="assets/img/produk/felibite2.jpg" data-gallery="public"
+                                class="portfolio-lightbox preview-link" title="Felibite 500g"><i class="bx bx-plus"></i></a>
+                            <a href="pembayaran" class="money-link" title="Pembayaran"><i
+                                    class="bx bx-money"></i></a>
                         </div>
                     </div>
 
@@ -224,10 +224,10 @@ document.getElementById('logout-form').submit();">
                         <div class="portfolio-info">
                             <h4>Excel 500g</h4>
                             <p>Rp 13.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
+                            <a href="assets/img/produk/excel1.jpg" data-gallery="public"
+                                class="portfolio-lightbox preview-link" title="Excel 500g"><i class="bx bx-plus"></i></a>
+                            <a href="pembayaran" class="money-link" title="Pembayaran"><i
+                                    class="bx bx-money"></i></a>
                         </div>
                     </div>
 
@@ -237,10 +237,10 @@ document.getElementById('logout-form').submit();">
                         <div class="portfolio-info">
                             <h4>Excel 500g</h4>
                             <p>Rp 13.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
+                            <a href="assets/img/produk/excel2.jpg" data-gallery="public"
+                                class="portfolio-lightbox preview-link" title="Excel 500g"><i class="bx bx-plus"></i></a>
+                            <a href="pembayaran" class="money-link" title="Pembayaran"><i
+                                    class="bx bx-money"></i></a>
                         </div>
                     </div>
 
@@ -250,10 +250,10 @@ document.getElementById('logout-form').submit();">
                         <div class="portfolio-info">
                             <h4>Meo Persia</h4>
                             <p>Rp 22.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
+                            <a href="assets/img/produk/meo.jpg" data-gallery="public"
+                                class="portfolio-lightbox preview-link" title="Meo Persia"><i class="bx bx-plus"></i></a>
+                            <a href="pembayaran" class="money-link" title="Pembayaran"><i
+                                    class="bx bx-money"></i></a>
                         </div>
                     </div>
 
@@ -263,10 +263,10 @@ document.getElementById('logout-form').submit();">
                         <div class="portfolio-info">
                             <h4>Meo Tuna 500g</h4>
                             <p>Rp 20.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
+                            <a href="assets/img/produk/meo500g.jpg" data-gallery="public"
+                                class="portfolio-lightbox preview-link" title="Meo Tuna 500g"><i class="bx bx-plus"></i></a>
+                            <a href="pembayaran" class="money-link" title="Pembayaran"><i
+                                    class="bx bx-money"></i></a>
                         </div>
                     </div>
 

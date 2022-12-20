@@ -13,8 +13,9 @@ class Produk extends Model
     
     protected $fillable = [
         'nama',
-        'produk',
-        'totalproduk',
-        'totalharga'
+        'jumlah',
+        'harga',
+        'hargapokok',
+        'total'
     ];
 }

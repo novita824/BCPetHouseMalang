@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
+use Throwable;
 
 class ProdukController extends Controller
 {
@@ -14,9 +15,10 @@ class ProdukController extends Controller
             $query
                 ->where('id', 'like', "%{$request->keyword}%")
                 ->orWhere('nama', 'like', "%{$request->keyword}%")
-                ->orWhere('produk', 'like', "%{$request->keyword}%")
-                ->orWhere('totalproduk', 'like', "%{$request->keyword}%")
-                ->orWhere('totalharga', 'like', "%{$request->keyword}%");
+                ->orWhere('jumlah', 'like', "%{$request->keyword}%")
+                ->orWhere('harga', 'like', "%{$request->keyword}%")
+                ->orWhere('hargapokok', 'like', "%{$request->keyword}%")
+                ->orWhere('total', 'like', "%{$request->keyword}%");
         })->orderBy('id')->paginate($pagination);
 
         return view('Produk.produkindex', compact('produk'))
@@ -40,9 +42,10 @@ class ProdukController extends Controller
         //
         $request->validate([
             'nama' => 'required',
-            'produk' => 'required',
-            'totalproduk' => 'required',
-            'totalharga' => 'required',
+            'jumlah' => 'required',
+            'harga' => 'required',
+            'hargapokok' => 'required',
+            'total' => 'required',
         ]);
         Produk::create($request->all());
 
@@ -73,16 +76,18 @@ class ProdukController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'produk' => 'required',
-            'totalproduk' => 'required',
-            'totalharga' => 'required',
+            'jumlah' => 'required',
+            'harga' => 'required',
+            'hargapokok' => 'required',
+            'total' => 'required',
         ]);
         $Produk = Produk::where('id', $id)->first();
         $Produk->update([
             'nama' => $request->get('nama'),
-            'produk' => $request->get('produk'),
-            'totalproduk' => $request->get('totalproduk'),
-            'totalharga' => $request->get('totalharga'),
+            'jumlah' => $request->get('jumlah'),
+            'harga' => $request->get('harga'),
+            'hargapokok' => $request->get('hargapokok'),
+            'total' => $request->get('total'),
         ]);
 
         return redirect()->route('produk.index')

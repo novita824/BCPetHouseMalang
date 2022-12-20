@@ -106,7 +106,7 @@ document.getElementById('logout-form').submit();">
 
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info"><br/>
-              <h4>Paket Penitipan</h4><br/><br/>
+              <h4>List Paket Penitipan</h4><br/><br/>
                 <h4>* Paket Kos :</h4>
                 <p>Rp 20.000,00</p>
                 <h4>* Paket Losman :</h4>

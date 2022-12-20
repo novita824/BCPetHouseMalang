@@ -172,9 +172,9 @@ document.getElementById('logout-form').submit();">
                         <div class="portfolio-info">
                             <h4>Bolt Tuna 1 Kg</h4>
                             <p>Rp 22.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                            <a href="assets/img/produk/BoltTuna1kg.jpg" data-gallery="public"
+                                class="portfolio-lightbox preview-link" title="View"><i class="bx bx-plus"></i></a>
+                            <a href="pembayaran" class="details-link" title="Pembayaran"><i
                                     class="bx bx-link"></i></a>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ class GroomingController extends Controller
 {
     public function index(Request $request)
     {
-        $pegawai = DB::table('grooming')->get();
+        $grooming = DB::table('grooming')->get();
         $pagination = 5;
         $grooming = Grooming::when($request->keyword, function ($query) use ($request) {
             $query
@@ -25,14 +25,14 @@ class GroomingController extends Controller
                 ->orWhere('status', 'like', "%{$request->keyword}%");
         })->orderBy('id')->paginate($pagination);
 
-        return view('Grooming.groomingindex', compact('grooming'))
+        return view('Grooming.index', compact('grooming'))
             ->with('i', (request()->input('page', 1) - 1) * $pagination);
     }
 
     public function create()
     {
         //
-        return view('Grooming.groomingcreate');
+        return view('grooming.create');
     }
 
     /**
@@ -54,7 +54,7 @@ class GroomingController extends Controller
         ]);
         Grooming::create($request->all());
 
-        return redirect()->route('Grooming.groomingindex')->with('succes','Data Berhasil di Input');
+        return redirect()->route('Grooming.index')->with('succes','Data Berhasil di Input');
     }
 
     /**
@@ -67,7 +67,7 @@ class GroomingController extends Controller
     {
         $this->authorize('admin');
         $grooming = grooming::find($id);
-        return view('Grooming.groominganedit', compact('grooming'));
+        return view('Grooming.edit', compact('grooming'));
     }
 
     /*  *
@@ -87,8 +87,8 @@ class GroomingController extends Controller
             'hargapokok' => 'required',
             'status' => 'required',
         ]);
-        $Grooming = Penitipan::where('id', $id)->first();
-        $Grooming->update([
+        $grooming = Grooming::where('id', $id)->first();
+        $grooming->update([
             'pemilik' => $request->get('pemilik'),
             'tipe' => $request->get('tipe'),
             'pj' => $request->get('pj'),
@@ -97,7 +97,7 @@ class GroomingController extends Controller
             'status' => $request->get('status')
         ]);
 
-        return redirect()->route('grooming.index')
+        return redirect()->route('Grooming.index')
             ->with('success', 'Grooming Berhasil Diupdate');
     }
 
@@ -116,7 +116,7 @@ class GroomingController extends Controller
                 ->with('success', 'Grooming Berhasil Dihapus');
         } catch (Throwable $error) {
             report($error);
-            return redirect()->route('grooming.index')
+            return redirect()->route('Grooming.index')
                 ->with('errors', 'Mohon Maaf Data Penitipan Belum Bisa Dihapus. Coba Lagi Nanti');
         }
     }

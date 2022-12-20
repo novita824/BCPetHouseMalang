@@ -108,8 +108,8 @@
                   <div class="card-body">
                     <h4 class="card-title">Data Grooming Hewan</h4>
                     </p>
-                    <a href="{{ route('groomingcreate')}}" type="button" class="btn btn-outline-primary btn-icon-text">
-                      <i href="tambahDataProduk.php" class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
+                    <a href="{{ route('Grooming.create') }}" type="button" class="btn btn-outline-primary btn-icon-text">
+                      <i class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
                     <table class="table table-striped">
                       <thead>
                         <tr>
@@ -130,8 +130,8 @@
                           <td> 40.000,00 </td>
                           <td> 40.000,00 </td>
                           <td> Terlayani </td>
-                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('grooming.edit',$grooming->id)}}">Edit</a>
-                          <a class="btn btn-gradient-danger btn-sm" href="{{ route('grooming.destroy',$grooming->id)}}">Hapus</a></td>
+                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('Grooming.edit',$grooming->id)}}">Edit</a>
+                          <a class="btn btn-gradient-danger btn-sm" href="{{ route('Grooming.destroy',$grooming->id)}}">Hapus</a></td>
                         </tr>
                       </tbody>
                     </table>

@@ -45,6 +45,11 @@ class PenitipanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function create()
+    {
+        //
+        return view('penitipan.create');
+    }
 
     public function edit($id)
     {
@@ -60,6 +65,24 @@ class PenitipanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function store(Request $request)
+    {
+        //
+        $request->validate([
+            'nama' => 'required',
+            'namahewan' => 'required',
+            'jenishewan' => 'required',
+            'umur' => 'required',
+            'alamat' => 'required',
+            'notelp' => 'required',
+            'tipegrooming' => 'required',
+            'sediapetcargo' => 'required',
+        ]);
+        Penitipan::create($request->all());
+
+        return redirect()->route('penitipan.index')->with('succes','Data Berhasil di Input');
+    }
+
     public function update(Request $request, $id)
     {
         $request->validate([

@@ -88,7 +88,7 @@
               </a>
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="product"> Product </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="produk"> Product </a></li>
                   <li class="nav-item"> <a class="nav-link" href="Grooming"> Grooming </a></li>
                   <li class="nav-item"> <a class="nav-link" href="Penitipan"> Penitipan </a></li>
                 </ul>
@@ -108,6 +108,8 @@
                   <div class="card-body">
                     <h4 class="card-title">Data Penitipan Hewan</h4>
                     </p>
+                    <a href="{{ route('penitipan.create') }}" type="button" class="btn btn-outline-primary btn-icon-text">
+                      <i class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
                     <table class="table table-striped">
                       <thead>
                         <tr>
@@ -132,46 +134,6 @@
 		                        <a href="{{ route('penitipan.penitipanedit', $Penitipan->id) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
                             <a href="/penitipan/hapus/{{ $penitipan->$id }}"class="btn btn-gradient-danger btn-sm">Hapus</a>
 	                        </td>
-                        </tr>
-                        <tr>
-                          <td> Herman Beck </td>
-                          <td> Paket Kos </td>
-                          <td> 05/12/2022 </td>
-                          <td> 11/12/2022 </td>
-                          <td> Rp 20.000,00 </td>
-                          <td><label class="badge badge-danger">Belum Selesai</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
-                        </tr>
-                        <tr>
-                          <td> Herman Beck </td>
-                          <td> Paket Kos </td>
-                          <td> 05/12/2022 </td>
-                          <td> 11/12/2022 </td>
-                          <td> Rp 20.000,00 </td>
-                          <td><label class="badge badge-info">Selesai</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
-                        </tr>
-                        <tr>
-                          <td> Herman Beck </td>
-                          <td> Paket Kos </td>
-                          <td> 05/12/2022 </td>
-                          <td> 11/12/2022 </td>
-                          <td> Rp 20.000,00 </td>
-                          <td><label class="badge badge-danger">Belum Selesai</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
-                        </tr>
-                        <tr>
-                          <td> Herman Beck </td>
-                          <td> Paket Kos </td>
-                          <td> 05/12/2022 </td>
-                          <td> 11/12/2022 </td>
-                          <td> Rp 20.000,00 </td>
-                          <td><label class="badge badge-info">Selesai</label></td>
-                          <td><button type="button" class="btn btn-gradient-primary btn-sm">Edit</button>
-                            <button type="button" class="btn btn-gradient-danger btn-sm">Hapus</button></td>
                         </tr>
                       </tbody>
                     </table>

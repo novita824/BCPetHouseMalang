@@ -99,7 +99,7 @@ document.getElementById('logout-form').submit();">
 
         <div class="section-title">
           <h2>Penitipan</h2>
-          <p>Disini menyediakan berbagai macam paket untuk penitipan hewan peliharaan</p>
+          <p>Isi form terlebih dahulu untuk menitipkan hewan anda</p>
         </div>
 
         <div class="row">
@@ -117,56 +117,56 @@ document.getElementById('logout-form').submit();">
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form name="google-sheet" action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Nama Hewan</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
+                  <input type="text" name="namahewan" class="form-control" id="subject" required>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Nama Pemilik</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <input type="text" class="form-control" name="email" id="subject" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="name">Alamat (beserta sharelock)</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="alamat" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">Sedia Pet Cargo (Ya/Tidak)</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="sediapetcargo" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">Sedia Kandang (Ya/Tidak)</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="sediakandang" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Penitipan (Tanggal h0-hx)</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="tanggalpenitipan" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">Jenis Paket</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="jenispaket" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">1. Sehari biasa makan berapa kali</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="berapakalimakan" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">2. Pakan</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="pakan" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">3. Riwayat Vaksin</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="riwayatvaksin" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">4. Kontak yang bisa dihubungi (WhatsApp)</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="kontak" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">5. Riwayat Penyakit</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="riwayatpenyakit" id="subject" required>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -273,7 +273,5 @@ document.getElementById('logout-form').submit();">
         form.reset();
     })
 </script>
-
 </body>
-
 </html>

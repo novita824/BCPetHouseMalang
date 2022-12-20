@@ -99,7 +99,7 @@ document.getElementById('logout-form').submit();">
 
         <div class="section-title">
           <h2>Grooming</h2>
-          <p>Disini menyediakan berbagai macam tipe grooming</p>
+          <p>Isi form terlebih dahulu untuk grooming hewan anda</p>
         </div>
 
         <div class="row">

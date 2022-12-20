@@ -72,10 +72,6 @@ document.getElementById('logout-form').submit();">
                     data-aos="fade-up" data-aos-delay="200">
                     <h1>SELAMAT DATANG DI BC PET HOUSE</h1>
                     <h2>We Love We Care</h2>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="{{ route('login') }}" class="btn-get-started scrollto">Log In</a>
-                        <a href="{{ route('register') }}" class="btn-get-started scrollto">Register</a>
-                    </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
                     <img src="assets/img/Ilustrasi.png" class="img-fluid animated" alt="">
@@ -131,7 +127,7 @@ document.getElementById('logout-form').submit();">
         <section id="services" class="services section-bg">
             <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
+                <div class="section-title" >
                     <h2>Service</h2>
                     <p>Menyediakan layanan untuk hewan peliharaan</p>
                 </div>
@@ -155,6 +151,7 @@ document.getElementById('logout-form').submit();">
                                 pelanggan</p>
                         </div>
                     </div>
+                </div>
 
         </section><!-- End Services Section -->
 

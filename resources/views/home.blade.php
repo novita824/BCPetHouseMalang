@@ -376,35 +376,30 @@ document.getElementById('logout-form').submit();">
                                 <p>0857-0818-0182</p>
                             </div>
 
-                            <iframe
-                                src="https://www.google.com/maps/place/BC+Pet+House/@-7.9417223,112.6104292,18z/data=!3m1!4b1!4m6!3m5!1s0x2e7883d1e6eed575:0xbbdecda2ab304385!8m2!3d-7.9417246!4d112.6113809!16s%2Fg%2F11rkf67hnz"
-                                frameborder="0" style="border:0; width: 100%; height: 290px;"
-                                allowfullscreen></iframe>
                         </div>
 
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form name="google-sheet" action="forms/contact.php" method="post" role="form" class="php-email-form">
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Nama</label>
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        required>
+                                    <input type="text" name="nama" class="form-control" id="subject" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="name">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email"
+                                    <input type="text" class="form-control" name="email" id="subject"
                                         required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name">Judul</label>
-                                <input type="text" class="form-control" name="subject" id="subject" required>
+                                <input type="text" class="form-control" name="judul" id="subject" required>
                             </div>
                             <div class="form-group">
                                 <label for="name">Komentar</label>
-                                <textarea class="form-control" name="message" rows="10" required></textarea>
+                                <textarea class="form-control" name="komentar" rows="10" required></textarea>
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>
@@ -413,6 +408,18 @@ document.getElementById('logout-form').submit();">
                             </div>
                             <div class="text-center"><button type="submit">Kirim</button></div>
                         </form>
+                        <script>
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbwgNFzYiIEe0QTSldlH8vfhvuRqGur9sOQav6WJG7_zBhbKNEeR9oXcvHAmB0o6dIgnfg/exec'
+                            const form = document.forms['google-sheet']
+                            
+                            form.addEventListener('submit', e => {
+                                e.preventDefault()
+                                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                                .then(response => $("#form_alerts").html("<div class='alert alert-success'>Data berhasil dikirim.</div>"))
+                                .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Data gagal terkirim!.</div>"))
+                                form.reset();
+                            })
+                        </script>
                     </div>
 
                 </div>

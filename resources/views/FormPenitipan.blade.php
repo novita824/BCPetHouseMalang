@@ -99,20 +99,25 @@ document.getElementById('logout-form').submit();">
 
         <div class="section-title">
           <h2>Penitipan</h2>
-          <p>Isi form terlebih dahulu untuk menitipkan hewan anda</p>
+          <p>Isi form dan check terlebih dahulu untuk data form penitipkan hewan peliharaan</p>
         </div>
 
         <div class="row">
 
           <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info"></br>
-              <h4>Paket Penitipan</h4></br></br>
+            <div class="info"><br/>
+              <h4>Paket Penitipan</h4><br/><br/>
                 <h4>* Paket Kos :</h4>
                 <p>Rp 20.000,00</p>
                 <h4>* Paket Losman :</h4>
                 <p>Rp 25.000,00</p>
                 <h4>* Paket Apartemen :</h4>
                 <p>Rp 35.000,00</p>
+                <br/>
+                <h5>Jika terdapat kendala atau cancel</h5>
+                <h6>Klik dibawah ini untuk menghubungi kami</h6>
+                <a href="https://bit.ly/BCPetHouse" class="center"><button type="submit">BC Pet House</button></a>
+                <br/><br/>
             </div>
           </div>
 

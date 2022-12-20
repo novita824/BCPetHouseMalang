@@ -99,23 +99,41 @@ document.getElementById('logout-form').submit();">
 
         <div class="section-title">
           <h2>Grooming</h2>
-          <p>Isi form terlebih dahulu untuk grooming hewan anda</p>
+          <p>Isi form dan check terlebih dahulu untuk data form grooming hewan peliharaan</p>
         </div>
 
         <div class="row">
           <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info"></br>
-              <h4>Tipe Grooming</h4></br></br>
+            <div class="info"><br/>
+              <h4>List Tipe Grooming</h4><br/><br/>
                 <h4>* Regular :</h4>
                 <p>Rp 40.000,00</p>
+                <h4>* Regular (Kitten) :</h4>
+                <p>Rp 30.000,00</p>
+                <h4>* Regular (Anjing) :</h4>
+                <p>Rp 50.000,00</p>
                 <h4>* Kutu/Jamur :</h4>
                 <p>Rp 50.000,00</p>
+                <h4>* Kutu/Jamur (Kitten) :</h4>
+                <p>Rp 40.000,00</p>
+                <h4>* Kutu/Jamur (Anjing) :</h4>
+                <p>Rp 65.000,00</p>
                 <h4>* Lengkap :</h4>
                 <p>Rp 55.000,00</p>
                 <h4>* Sebazol :</h4>
                 <p>Rp 70.000,00</p>
                 <h4>* Kering :</h4>
                 <p>Rp 20.000,00</p>
+                <br/>
+                <h4>* Harga untuk penambahan</h4>
+                <br/>
+                <p>- DEGREASER (+ Rp10.000,00)</p>
+                <p>- WHITENING (+ Rp5.000,00)</p>
+                <br/>
+                <h5>Jika terdapat kendala atau cancel</h5>
+                <h6>Klik dibawah ini untuk menghubungi kami</h6>
+                <a href="https://bit.ly/BCPetHouse" class="center"><button type="submit">BC Pet House</button></a>
+                <br/><br/>
             </div>
           </div>
 

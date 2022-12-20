@@ -99,12 +99,11 @@ document.getElementById('logout-form').submit();">
 
         <div class="section-title">
           <h2>Checkout Product</h2>
-          <p>Pembayaran dapat melalui</p>
-        </div>
-        
-        <div class="social-links mt-3">
-            <h4>WhatsApp</h4>
-            <a href="https://bit.ly/BCPetHouse" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+          <p>Pembayaran dapat melalui via WhatsApp</p>
+          <br/>
+            <h4>Klik dibawah ini untuk link WhatsApp</h4>
+            <a href="https://bit.ly/BCPetHouse" type="button" class="btn btn-gradient-success btn-icon-text">
+                <i class="bx bxl-whatsapp"></i> BC Pet House </a>
         </div>
 
       </div>

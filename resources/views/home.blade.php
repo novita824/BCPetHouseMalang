@@ -173,9 +173,9 @@ document.getElementById('logout-form').submit();">
                             <h4>Bolt Tuna 1 Kg</h4>
                             <p>Rp 22.000,00</p>
                             <a href="assets/img/produk/BoltTuna1kg.jpg" data-gallery="public"
-                                class="portfolio-lightbox preview-link" title="View"><i class="bx bx-plus"></i></a>
-                            <a href="pembayaran" class="details-link" title="Pembayaran"><i
-                                    class="bx bx-link"></i></a>
+                                class="portfolio-lightbox preview-link" title="Bolt Tuna 1 KgBolt Tuna 1 Kg"><i class="bx bx-plus"></i></a>
+                            <a href="pembayaran" class="money-link" title="Pembayaran"><i
+                                    class="bx bx-money"></i></a>
                         </div>
                     </div>
 

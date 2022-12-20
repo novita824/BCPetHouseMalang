@@ -88,7 +88,7 @@
               </a>
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="product"> Product </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="Produk"> Product </a></li>
                   <li class="nav-item"> <a class="nav-link" href="Grooming"> Grooming </a></li>
                   <li class="nav-item"> <a class="nav-link" href="Penitipan"> Penitipan </a></li>
                 </ul>

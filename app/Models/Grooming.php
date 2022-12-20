@@ -12,13 +12,11 @@ class Grooming extends Model
     protected $primaryKey = 'id';
     
     protected $fillable = [
-        'nama',
-        'namahewan',
-        'jenishewan',
-        'umur',
-        'alamat',
-        'notelp',
-        'tipegrooming',
-        'sediapetcargo'
+        'pemilik',
+        'tipe',
+        'pj',
+        'harga',
+        'hargapokok',
+        'status'
     ];
 }

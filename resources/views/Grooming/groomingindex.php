@@ -108,14 +108,16 @@
                   <div class="card-body">
                     <h4 class="card-title">Data Grooming Hewan</h4>
                     </p>
+                    <a href="{{ route('groomingcreate')}}" type="button" class="btn btn-outline-primary btn-icon-text">
+                      <i href="tambahDataProduk.php" class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th> Nama </th>
-                          <th> Nama Hewan </th>
-                          <th> Jenis Hewan </th>
-                          <th> Alamat </th>
-                          <th> Tipe Grooming </th>
+                          <th> Pemilik </th>
+                          <th> Tipe </th>
+                          <th> PJ </th>
+                          <th> Harga </th>
+                          <th> Harga Pokok </th>
                           <th> Status </th>
                           <th> Action </th>
                         </tr>
@@ -123,13 +125,12 @@
                       <tbody>
                         <tr>
                           <td> Herman Beck </td>
-                          <td> Blacky </td>
-                          <td> Kucing Persia </td>
-                          <td> sawojajar </td>
                           <td> Regular </td>
-                          <td><label class="badge badge-info">Terlayani</label></td>
-                          <td><a class="btn btn-gradient-info btn-sm" href="{{ route('grooming.show',$grooming->id)}}">Detail</a>
-                          <a class="btn btn-gradient-primary btn-sm" href="{{ route('grooming.edit',$grooming->id)}}">Edit</a>
+                          <td> - </td>
+                          <td> 40.000,00 </td>
+                          <td> 40.000,00 </td>
+                          <td> Terlayani </td>
+                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('grooming.edit',$grooming->id)}}">Edit</a>
                           <a class="btn btn-gradient-danger btn-sm" href="{{ route('grooming.destroy',$grooming->id)}}">Hapus</a></td>
                         </tr>
                       </tbody>

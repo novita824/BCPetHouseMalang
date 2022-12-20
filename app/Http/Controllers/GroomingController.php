@@ -5,24 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Grooming;
 use App\Models\Penitipan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Throwable;
 
 class GroomingController extends Controller
 {
     public function index(Request $request)
     {
+        $pegawai = DB::table('grooming')->get();
         $pagination = 5;
         $grooming = Grooming::when($request->keyword, function ($query) use ($request) {
             $query
                 ->where('id', 'like', "%{$request->keyword}%")
-                ->orWhere('nama', 'like', "%{$request->keyword}%")
-                ->orWhere('namahewan', 'like', "%{$request->keyword}%")
-                ->orWhere('jenishewan', 'like', "%{$request->keyword}%")
-                ->orWhere('umur', 'like', "%{$request->keyword}%")
-                ->orWhere('alamat', 'like', "%{$request->keyword}%")
-                ->orWhere('notelp', 'like', "%{$request->keyword}%")
-                ->orWhere('tipegrooming', 'like', "%{$request->keyword}%")
-                ->orWhere('sediapetcargo', 'like', "%{$request->keyword}%");
+                ->orWhere('pemilik', 'like', "%{$request->keyword}%")
+                ->orWhere('tipe', 'like', "%{$request->keyword}%")
+                ->orWhere('pj', 'like', "%{$request->keyword}%")
+                ->orWhere('harga', 'like', "%{$request->keyword}%")
+                ->orWhere('hargapokok', 'like', "%{$request->keyword}%")
+                ->orWhere('status', 'like', "%{$request->keyword}%");
         })->orderBy('id')->paginate($pagination);
 
         return view('Grooming.groomingindex', compact('grooming'))
@@ -45,14 +45,12 @@ class GroomingController extends Controller
     {
         //
         $request->validate([
-            'nama' => 'required',
-            'namahewan' => 'required',
-            'jenishewan' => 'required',
-            'umur' => 'required',
-            'alamat' => 'required',
-            'notelp' => 'required',
-            'tipegrooming' => 'required',
-            'sediapetcargo' => 'required',
+            'pemilik' => 'required',
+            'tipe' => 'required',
+            'pj' => 'required',
+            'harga' => 'required',
+            'hargapokok' => 'required',
+            'status' => 'required',
         ]);
         Grooming::create($request->all());
 
@@ -82,25 +80,21 @@ class GroomingController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required',
-            'namahewan' => 'required',
-            'jenishewan' => 'required',
-            'umur' => 'required',
-            'alamat' => 'required',
-            'notelp' => 'required',
-            'tipegrooming' => 'required',
-            'sediapetcargo' => 'required',
+            'pemilik' => 'required',
+            'tipe' => 'required',
+            'pj' => 'required',
+            'harga' => 'required',
+            'hargapokok' => 'required',
+            'status' => 'required',
         ]);
         $Grooming = Penitipan::where('id', $id)->first();
         $Grooming->update([
-            'nama' => $request->get('nama'),
-            'namahewan' => $request->get('namahewan'),
-            'jenishewan' => $request->get('jenishewan'),
-            'umur' => $request->get('umur'),
-            'alamat' => $request->get('alamat'),
-            'notelp' => $request->get('notelp'),
-            'tipegrooming' => $request->get('tipegrooming'),
-            'sediapetcargo' => $request->get('sediapetcargo')
+            'pemilik' => $request->get('pemilik'),
+            'tipe' => $request->get('tipe'),
+            'pj' => $request->get('pj'),
+            'harga' => $request->get('harga'),
+            'hargapokok' => $request->get('hargapokok'),
+            'status' => $request->get('status')
         ]);
 
         return redirect()->route('grooming.index')

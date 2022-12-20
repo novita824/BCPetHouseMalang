@@ -261,6 +261,18 @@ document.getElementById('logout-form').submit();">
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyA2fcsm8b4OA2KFmHyxMopQa0UuROuZ7trCgnAXemAsR3Awqjgfngu-QimmCzns6Bqmg/exec'
+    const form = document.forms['google-sheet']
+    
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => $("#form_alerts").html("<div class='alert alert-success'>Data berhasil dikirim.</div>"))
+        .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Data gagal terkirim!.</div>"))
+        form.reset();
+    })
+</script>
 
 </body>
 

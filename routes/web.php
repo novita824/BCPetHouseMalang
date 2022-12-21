@@ -62,4 +62,4 @@ Route::get('/pembayaran', function (){
 Auth::routes();
 
 Route::redirect('/', '/login');
-
+Route::redirect('/', '/register');

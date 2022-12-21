@@ -21,14 +21,14 @@ class ProdukController extends Controller
                 ->orWhere('total', 'like', "%{$request->keyword}%");
         })->orderBy('id')->paginate($pagination);
 
-        return view('Produk.produkindex', compact('produk'))
+        return view('Produk.index', compact('produk'))
             ->with('i', (request()->input('page', 1) - 1) * $pagination);
     }
 
     public function create()
     {
         //
-        return view('Produk.produkcreate');
+        return view('Produk.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class ProdukController extends Controller
         ]);
         Produk::create($request->all());
 
-        return redirect()->route('Produk.produkindex')->with('succes','Data Berhasil di Input');
+        return redirect()->route('Produk.index')->with('succes','Data Berhasil di Input');
     }
 
     /**
@@ -62,7 +62,7 @@ class ProdukController extends Controller
     {
         $this->authorize('admin');
         $produk = produk::find($id);
-        return view('Produk.produkedit', compact('produk'));
+        return view('Produk.edit', compact('produk'));
     }
 
     /*  *
@@ -90,7 +90,7 @@ class ProdukController extends Controller
             'total' => $request->get('total'),
         ]);
 
-        return redirect()->route('produk.index')
+        return redirect()->route('Produk.index')
             ->with('success', 'Produk Berhasil Diupdate');
     }
 
@@ -105,11 +105,11 @@ class ProdukController extends Controller
         $this->authorize('admin');
         try {
             Produk::find($id)->delete();
-            return redirect()->route('produk.index')
+            return redirect()->route('Produk.index')
                 ->with('success', 'Produk Berhasil Dihapus');
         } catch (Throwable $error) {
             report($error);
-            return redirect()->route('produk.index')
+            return redirect()->route('Produk.index')
                 ->with('errors', 'Mohon Maaf Data Penitipan Belum Bisa Dihapus. Coba Lagi Nanti');
         }
     }

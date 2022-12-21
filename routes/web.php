@@ -42,8 +42,8 @@ Route::get('/datagrooming', [GroomingController::class, 'index'])->name('groomin
 Route::get('/tambahdatagrooming', [GroomingController::class, 'create'])->name('groomingcreate');
 
 Route::resource('Penitipan', PenitipanController::class);
-Route::get('/datapenitipan', [PenitipanControllerroller::class, 'index'])->name('Penitipan.penitipanindex');
-Route::get('/tambahdatapenitipan', [PenitipanController::class, 'create'])->name('Penitipan.penitipancreate');
+Route::get('/datapenitipan', [PenitipanControllerroller::class, 'index'])->name('penitipanindex');
+Route::get('/tambahdatapenitipan', [PenitipanController::class, 'create'])->name('penitipancreate');
 
 Route::resource('Produk', ProdukController::class);
 Route::get('/home', [HomeController::class, 'index'])->name('home');

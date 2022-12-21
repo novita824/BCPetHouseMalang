@@ -11,17 +11,12 @@ class Penitipan extends Model
     protected $table = 'penitipan';
     
     protected $fillable = [
-        'namahewan',
-        'jenishewan',
-        'alamat',
-        'sediapetcargo',
-        'sediakandang',
-        'tanggalpenginapan',
-        'jenispaket',
-        'berapakalimakan',
-        'pakan',
-        'riwayatvaksin',
-        'kontak',
-        'riwayatpenyakit'
+        'nopenitipan',
+        'pemilik',
+        'tipe',
+        'pj',
+        'harga',
+        'hargapokok',
+        'status'
     ];
 }

@@ -12,32 +12,28 @@ class PenitipanController extends Controller
 {
     public function index(Request $request)
     {
-        $pagination = 5;
-        $Penitipan = Penitipan::when($request->keyword, function ($query) use ($request) {
-            $query
-                ->where('Id', 'like', "%{$request->keyword}%")
-                ->orWhere('namahewan', 'like', "%{$request->keyword}%")
-                ->orWhere('namapemilik', 'like', "%{$request->keyword}%")
-                ->orWhere('alamat', 'like', "%{$request->keyword}%")
-                ->orWhere('sediapetcargo', 'like', "%{$request->keyword}%")
-                ->orWhere('sediakandang', 'like', "%{$request->keyword}%")
-                ->orWhere('tanggalpenitipan', 'like', "%{$request->keyword}%")
-                ->orWhere('jenispaket', 'like', "%{$request->keyword}%")
-                ->orWhere('berapakalimakan', 'like', "%{$request->keyword}%")
-                ->orWhere('pakan', 'like', "%{$request->keyword}%")
-                ->orWhere('riwayatvaksin', 'like', "%{$request->keyword}%")
-                ->orWhere('kontak', 'like', "%{$request->keyword}%")
-                ->orWhere('riwayatpenyakit', 'like', "%{$request->keyword}%");
-        })->orderBy('Id')->paginate($pagination);
+        $penitipan=Penitipan::all();
+        return view('Penitipan.index', compact('penitipan'));
+        // $pagination = 5;
+        // $Penitipan = Penitipan::when($request->keyword, function ($query) use ($request) {
+        //     $query
+        //         ->where('nopenitipan', 'like', "%{$request->keyword}%")
+        //         ->orWhere('pemilik', 'like', "%{$request->keyword}%")
+        //         ->orWhere('tipe', 'like', "%{$request->keyword}%")
+        //         ->orWhere('pj', 'like', "%{$request->keyword}%")
+        //         ->orWhere('harga', 'like', "%{$request->keyword}%")
+        //         ->orWhere('hargapokok', 'like', "%{$request->keyword}%")
+        //         ->orWhere('status', 'like', "%{$request->keyword}%");
+        // })->orderBy('Id')->paginate($pagination);
 
-        return view('Penitipan.penitipanindex', compact('Penitipan'))
-            ->with('i', (request()->input('page', 1) - 1) * $pagination);
+        // return view('Penitipan.penitipanindex', compact('Penitipan'))
+        //     ->with('i', (request()->input('page', 1) - 1) * $pagination);
         
-        // mengambil data dari table pegawai
-    	$Penitipan = DB::table('penitipan')->get();
+        // // mengambil data dari table pegawai
+    	// $Penitipan = DB::table('penitipan')->get();
  
-    	// mengirim data pegawai ke view index
-    	return view('index',['pegawai' => $Penitipan]);
+    	// // mengirim data pegawai ke view index
+    	// return view('index',['pegawai' => $Penitipan]);
     }
 
     /**
@@ -48,14 +44,14 @@ class PenitipanController extends Controller
     public function create()
     {
         //
-        return view('penitipan.create');
+        return view('Penitipan.create');
     }
 
-    public function edit($id)
+    public function edit($idpenitipan)
     {
         $this->authorize('admin');
-        $Penitipan = Penitipan::find($id);
-        return view('Penitipan.penitipanedit', compact('penitipan'));
+        $Penitipan = Penitipan::find($idpenitipan);
+        return view('Penitipan.edit', compact('penitipan'));
     }
 
     /**
@@ -69,42 +65,39 @@ class PenitipanController extends Controller
     {
         //
         $request->validate([
-            'nama' => 'required',
-            'namahewan' => 'required',
-            'jenishewan' => 'required',
-            'umur' => 'required',
-            'alamat' => 'required',
-            'notelp' => 'required',
-            'tipegrooming' => 'required',
-            'sediapetcargo' => 'required',
+            'nopenitipan' => 'required',
+            'pemilik' => 'required',
+            'tipe' => 'required',
+            'pj' => 'required',
+            'harga' => 'required',
+            'hargapokok' => 'required',
+            'status' => 'required',
         ]);
         Penitipan::create($request->all());
 
-        return redirect()->route('penitipan.index')->with('succes','Data Berhasil di Input');
+        return redirect()->route('Penitipan.index')->with('succes','Data Berhasil di Input');
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $idpenitipan)
     {
         $request->validate([
-            'nama' => 'required',
-            'namahewan' => 'required',
-            'jenishewan' => 'required',
-            'umur' => 'required',
-            'alamat' => 'required',
-            'notelp' => 'required',
-            'tipegrooming' => 'required',
-            'sediapetcargo' => 'required',
+            'nopenitipan' => 'required',
+            'pemilik' => 'required',
+            'tipe' => 'required',
+            'pj' => 'required',
+            'harga' => 'required',
+            'hargapokok' => 'required',
+            'status' => 'required',
         ]);
-        $Penitipan = Penitipan::where('id', $id)->first();
+        $Penitipan = Penitipan::where('nopenitipan', $idpenitipan)->first();
         $Penitipan->update([
-            'nama' => $request->get('nama'),
-            'namahewan' => $request->get('namahewan'),
-            'jenishewan' => $request->get('jenishewan'),
-            'umur' => $request->get('umur'),
-            'alamat' => $request->get('alamat'),
-            'notelp' => $request->get('notelp'),
-            'tipegrooming' => $request->get('tipegrooming'),
-            'sediapetcargo' => $request->get('sediapetcargo')
+            'nopenitipan' => $request->get('nopenitipan'),
+            'pemilik' => $request->get('pemilik'),
+            'tipe' => $request->get('tipe'),
+            'pj' => $request->get('pj'),
+            'harga' => $request->get('harga'),
+            'hargapokok' => $request->get('hargapokok'),
+            'status' => $request->get('status'),
         ]);
 
         return redirect()->route('penitipan.index')
@@ -117,11 +110,11 @@ class PenitipanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idpenitipan)
     {
         $this->authorize('admin');
         try {
-            Penitipan::find($id)->delete();
+            Penitipan::find($idpenitipan)->delete();
             return redirect()->route('penitipan.index')
                 ->with('success', 'Penitipan Berhasil Dihapus');
         } catch (Throwable $error) {

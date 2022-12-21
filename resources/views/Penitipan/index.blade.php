@@ -108,34 +108,46 @@
                   <div class="card-body">
                     <h4 class="card-title">Data Penitipan Hewan</h4>
                     </p>
-                    <a href="{{ route('Penitipan.create') }}" type="button" class="btn btn-outline-primary btn-icon-text">
+                    <a href="{{ route('Penitipan.create') }}"  type="button" class="btn btn-outline-primary btn-icon-text">
                       <i class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th> Nama </th>
-                          <th> Paket </th>
-                          <th> Tanggal Penitipan </th>
-                          <th> Tanggal Pengambilan </th>
+                          <th> No </th>
+                          <th> Pemilik </th>
+                          <th> Tipe </th>
+                          <th> PJ </th>
                           <th> Harga </th>
+                          <th> Harga Pokok </th>
                           <th> Status </th>
                           <th> Action </th>
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach ($penitipan as $pn)
                         <tr>
-                          <td> Herman Beck </td>
-                          <td> Paket Kos </td>
-                          <td> 05/12/2022 </td>
-                          <td> 11/12/2022 </td>
-                          <td> Rp 20.000,00 </td>
-                          <td><label class="badge badge-info">Selesai</label></td>
-                          <td>
-		                        <a href="{{ route('penitipan.penitipanedit', $Penitipan->id) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
-                            <a href="/penitipan/hapus/{{ $penitipan->$id }}"class="btn btn-gradient-danger btn-sm">Hapus</a>
-	                        </td>
-                        </tr>
-                      </tbody>
+                            <td>{{ $pn->nopenitipan }}</td>
+                            <td>{{ $pn->pemilik }}</td>
+                            <td>{{ $pn->tipe }}</td>
+                            <td>{{ $pn->pj}}</td>
+                            <td>{{ $pn->harga}}</td>
+                            <td>{{ $pn->hargapokok }}</td>
+                            <td>{{ $pn ->status }}</td>
+                            <td><td>
+                              <form action="{{ route('Penitipan.destroy', $pn->idpenitipan) }}" method="POST">
+                                <a class="btn btn-gradient-primary btn-sm" href="{{ route('Penitipan.edit',$pn->idpenitipan) }}">Edit</a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-gradient-danger btn-sm">Delete</button>
+                            </form>
+                              {{-- <a href="{{ route('Grooming.edit', $grooming->pemilik) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
+                              <a href="{{ route('Grooming.destroy', $grooming->pemilik) }}"class="btn btn-gradient-danger btn-sm">Hapus</a> --}}
+                            </td>
+                                {{-- @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-gradient-danger btn-sm">Hapus</button> --}}
+                                      </tbody>
+                                      @endforeach
                     </table>
                   </div>
                 </div>

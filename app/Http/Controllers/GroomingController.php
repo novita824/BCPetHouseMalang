@@ -129,14 +129,7 @@ class GroomingController extends Controller
     public function destroy($idgrooming)
     {
         $this->authorize('admin');
-        try {
-            Grooming::find($idgrooming)->delete();
-            return redirect()->route('Grooming.index')
-                ->with('success', 'Grooming Berhasil Dihapus');
-        } catch (Throwable $error) {
-            report($error);
-            return redirect()->route('Grooming.index')
-                ->with('errors', 'Mohon Maaf Data Grooming Belum Bisa Dihapus. Coba Lagi Nanti');
-        }
+        Grooming::destroy($idgrooming);
+        return redirect('Grooming.index')->with('toast_success', 'Data grooming berhasil di hapus!');
     }
 }

@@ -108,7 +108,7 @@
                   <div class="card-body">
                     <h4 class="card-title">Data Penitipan Hewan</h4>
                     </p>
-                    <a href="{{ route('penitipan.create') }}" type="button" class="btn btn-outline-primary btn-icon-text">
+                    <a href="{{ route('Penitipan.create') }}" type="button" class="btn btn-outline-primary btn-icon-text">
                       <i class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
                     <table class="table table-striped">
                       <thead>

@@ -14,13 +14,14 @@ class CreateGroomingTable extends Migration
     public function up()
     {
         Schema::create('grooming', function (Blueprint $table) {
-            $table->id();
-            $table->string('pemilik');
-            $table->string('tipe');
-            $table->string('pj');
-            $table->string('harga');
-            $table->string('hargapokok');
-            $table->string('status');
+            $table->id('idgrooming');
+            $table->string('nogrooming', 10)->index();
+            $table->string('pemilik', 35)->index();
+            $table->string('tipe', 25);
+            $table->string('pj', 25);
+            $table->string('harga', 25);
+            $table->string('hargapokok', 25);
+            $table->string('status', 25);
             $table->timestamps();
         });
     }

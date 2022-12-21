@@ -98,7 +98,7 @@ document.getElementById('logout-form').submit();">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Grooming</h2>
+          <h2>Tambah Data Grooming</h2>
           <p>Disini menyediakan berbagai macam tipe grooming</p>
         </div>
 
@@ -121,47 +121,68 @@ document.getElementById('logout-form').submit();">
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
             <form action="{{ route('Grooming.store') }}" method="POST" class="php-email-form">
+              @csrf
               <div class="row">
                 <div class="form-group">
-                  <label for="name">Nama</label>
-                  <input type="text" class="form-control" name="nama" id="subject" required>
+                  <label for="name">No</label>
+                  <input type="text" class="form-control" name="nogrooming" id="subject" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Pemilik</label>
+                  <input type="text" class="form-control" name="pemilik" id="subject" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Nama Hewan</label>
-                  <input type="text" name="namahewan" class="form-control" id="subject" required>
+                  <label for="name">Tipe Grooming</label>
+                  <input type="text" name="tipe" class="form-control" id="subject" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Jenis Hewan</label>
-                  <input type="email" class="form-control" name="jenishewan" id="email" required>
+                  <label for="name">Penanggungjawab</label>
+                  <input type="text" class="form-control" name="pj" id="subject" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Umur</label>
-                <input type="text" class="form-control" name="umur" id="subject" required>
+                <label for="name">Harga</label>
+                <input type="text" class="form-control" name="harga" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Alamat</label>
-                <input type="text" class="form-control" name="alamat" id="subject" required>
+                <label for="name">Harga Pokok</label>
+                <input type="text" class="form-control" name="hargapokok" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">No.Telp (WhatsApp)</label>
-                <input type="text" class="form-control" name="notelp" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Tipe Grooming</label>
-                <input type="text" class="form-control" name="tipe" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Sedia Pet Cargo (Ya/Tidak)</label>
-                <input type="text" class="form-control" name="sediapetcargo" id="subject" required>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <label for="name">Status</label>
+                <input type="text" class="form-control" name="status" id="subject" required>
               </div>
               <div class="text-center"><button type="submit">Kirim</button></div>
-            </form>
+            {{-- <form action="{{ route('Grooming.store') }}" method="POST" class="php-email-form">
+              @csrf
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Pemilik</label>
+                  <input type="text" class="form-control" name="pemilik" id="subject" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Tipe Grooming</label>
+                  <input type="text" name="tipe" class="form-control" id="subject" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Penanggungjawab</label>
+                  <input type="text" class="form-control" name="pj" id="subject" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Harga</label>
+                <input type="text" class="form-control" name="harga" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Harga Pokok</label>
+                <input type="text" class="form-control" name="hargapokok" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Status</label>
+                <input type="text" class="form-control" name="status" id="subject" required>
+              </div>
+              <div class="text-center"><button type="submit">Kirim</button></div>
+            </form> --}}
           </div>
 
         </div>

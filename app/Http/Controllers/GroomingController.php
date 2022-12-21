@@ -10,23 +10,32 @@ use Throwable;
 
 class GroomingController extends Controller
 {
-    public function index(Request $request)
+    public function __construct()
     {
-        $grooming = DB::table('grooming')->get();
-        $pagination = 5;
-        $grooming = Grooming::when($request->keyword, function ($query) use ($request) {
-            $query
-                ->where('id', 'like', "%{$request->keyword}%")
-                ->orWhere('pemilik', 'like', "%{$request->keyword}%")
-                ->orWhere('tipe', 'like', "%{$request->keyword}%")
-                ->orWhere('pj', 'like', "%{$request->keyword}%")
-                ->orWhere('harga', 'like', "%{$request->keyword}%")
-                ->orWhere('hargapokok', 'like', "%{$request->keyword}%")
-                ->orWhere('status', 'like', "%{$request->keyword}%");
-        })->orderBy('id')->paginate($pagination);
+        $this->middleware('auth');
+    }
+    public function index()
+    {
+        $grooming=Grooming::all();
+        return view('Grooming.index', compact('grooming'));
+        // $grooming = DB::table('grooming')->get();
+        // $paginate = Grooming::orderBy('idgrooming', 'asc')->paginate(5);
+        // return view('Grooming.index', ['grooming' => $grooming, 'paginate' =>$paginate]);
+        // $grooming = DB::table('grooming')->get();
+        // $pagination = 10;
+        // $grooming = Grooming::when($request->keyword, function ($query) use ($request) {
+        //     $query
+        //         ->where('id', 'like', "%{$request->keyword}%")
+        //         ->orWhere('pemilik', 'like', "%{$request->keyword}%")
+        //         ->orWhere('tipe', 'like', "%{$request->keyword}%")
+        //         ->orWhere('pj', 'like', "%{$request->keyword}%")
+        //         ->orWhere('harga', 'like', "%{$request->keyword}%")
+        //         ->orWhere('hargapokok', 'like', "%{$request->keyword}%")
+        //         ->orWhere('status', 'like', "%{$request->keyword}%");
+        // })->orderBy('id')->paginate($pagination);
 
-        return view('Grooming.index', compact('grooming'))
-            ->with('i', (request()->input('page', 1) - 1) * $pagination);
+        // return view('Grooming.index', compact('grooming'))
+        //     ->with('i', (request()->input('page', 1) - 1) * $pagination);
     }
 
     public function create()
@@ -45,6 +54,7 @@ class GroomingController extends Controller
     {
         //
         $request->validate([
+            'nogrooming' => 'required',
             'pemilik' => 'required',
             'tipe' => 'required',
             'pj' => 'required',
@@ -63,11 +73,11 @@ class GroomingController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function edit($id)
+    public function edit($idgrooming)
     {
         $this->authorize('admin');
-        $grooming = grooming::find($id);
-        return view('Grooming.edit', compact('grooming'));
+        $grooming = Grooming::find($idgrooming);
+        return view('Grooming.edit', ['grooming' => $grooming]);
     }
 
     /*  *
@@ -77,9 +87,11 @@ class GroomingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idgrooming)
     {
+        $grooming =Grooming::find($idgrooming);
         $request->validate([
+            'nogrooming' => 'required',
             'pemilik' => 'required',
             'tipe' => 'required',
             'pj' => 'required',
@@ -87,8 +99,15 @@ class GroomingController extends Controller
             'hargapokok' => 'required',
             'status' => 'required',
         ]);
-        $grooming = Grooming::where('id', $id)->first();
+        //  //fungsi eloquent untuk mengupdate data inputan kita
+        //  Grooming::find($nogrooming)->update($request->all());
+   
+        //  //jika data berhasil diupdate, akan kembali ke halaman utama
+        //  return redirect()->route('Grooming.index')
+        //  ->with('success', 'Grooming Berhasil Diupdate');
+        $grooming = Grooming::where('nogrooming', $idgrooming)->first();
         $grooming->update([
+            'nogrooming' => $request->get('nogrooming'),
             'pemilik' => $request->get('pemilik'),
             'tipe' => $request->get('tipe'),
             'pj' => $request->get('pj'),
@@ -107,17 +126,17 @@ class GroomingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idgrooming)
     {
         $this->authorize('admin');
         try {
-            Grooming::find($id)->delete();
-            return redirect()->route('penitipan.index')
+            Grooming::find($idgrooming)->delete();
+            return redirect()->route('Grooming.index')
                 ->with('success', 'Grooming Berhasil Dihapus');
         } catch (Throwable $error) {
             report($error);
             return redirect()->route('Grooming.index')
-                ->with('errors', 'Mohon Maaf Data Penitipan Belum Bisa Dihapus. Coba Lagi Nanti');
+                ->with('errors', 'Mohon Maaf Data Grooming Belum Bisa Dihapus. Coba Lagi Nanti');
         }
     }
 }

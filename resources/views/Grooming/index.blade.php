@@ -113,6 +113,7 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
+                          <th> No </th>
                           <th> Pemilik </th>
                           <th> Tipe </th>
                           <th> PJ </th>
@@ -123,17 +124,31 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td> Herman Beck </td>
-                          <td> Regular </td>
-                          <td> - </td>
-                          <td> 40.000,00 </td>
-                          <td> 40.000,00 </td>
-                          <td> Terlayani </td>
-                          <td><a class="btn btn-gradient-primary btn-sm" href="{{ route('Grooming.edit',$grooming->id)}}">Edit</a>
-                          <a class="btn btn-gradient-danger btn-sm" href="{{ route('Grooming.destroy',$grooming->id)}}">Hapus</a></td>
-                        </tr>
+                        
+        @foreach ($grooming as $gr)
+        <tr>
+            <td>{{ $gr->nogrooming }}</td>
+            <td>{{ $gr->pemilik }}</td>
+            <td>{{ $gr->tipe }}</td>
+            <td>{{ $gr ->pj}}</td>
+            <td>{{ $gr->harga}}</td>
+            <td>{{ $gr->hargapokok }}</td>
+            <td>{{ $gr ->status }}</td>
+            <td><td>
+              <form action="{{ route('Grooming.destroy', $gr->idgrooming) }}" method="POST">
+                <a class="btn btn-gradient-primary btn-sm" href="{{ route('Grooming.edit',$gr->idgrooming) }}">Edit</a>
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-gradient-danger btn-sm">Delete</button>
+            </form>
+              {{-- <a href="{{ route('Grooming.edit', $grooming->pemilik) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
+              <a href="{{ route('Grooming.destroy', $grooming->pemilik) }}"class="btn btn-gradient-danger btn-sm">Hapus</a> --}}
+            </td>
+                {{-- @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-gradient-danger btn-sm">Hapus</button> --}}
                       </tbody>
+                      @endforeach
                     </table>
                   </div>
                 </div>

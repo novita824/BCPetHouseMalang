@@ -108,7 +108,7 @@
                   <div class="card-body">
                     <h4 class="card-title">Data Penitipan Hewan</h4>
                     </p>
-                    <a href="{{ route('Grooming.create') }}" type="button" class="btn btn-outline-primary btn-icon-text">
+                    <a href="{{ route('Produk.create') }}" type="button" class="btn btn-outline-primary btn-icon-text">
                       <i class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
                     <table class="table table-striped">
                       <thead>
@@ -131,8 +131,8 @@
                           <td> Rp 20.000,00 </td>
                           <td><label class="badge badge-info">Selesai</label></td>
                           <td>
-		                        <a href="{{ route('penitipan.penitipanedit', $Penitipan->id) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
-                            <a href="/penitipan/hapus/{{ $penitipan->$id }}"class="btn btn-gradient-danger btn-sm">Hapus</a>
+		                        <a href="{{ route('Produk.edit', $produk->id) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
+                            <a href="/produk/hapus/{{ $produk->$id }}"class="btn btn-gradient-danger btn-sm">Hapus</a>
 	                        </td>
                         </tr>
                       </tbody>

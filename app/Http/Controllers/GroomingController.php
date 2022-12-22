@@ -67,6 +67,14 @@ class GroomingController extends Controller
         return redirect()->route('Grooming.index')->with('succes','Data Berhasil di Input');
     }
 
+    public function show($idgrooming)
+    {
+        $grooming=Grooming::where('idgrooming', $idgrooming)->first();
+        return view('Grooming.detail', [
+            'grooming' => $grooming,
+        ]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

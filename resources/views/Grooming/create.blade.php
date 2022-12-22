@@ -153,36 +153,7 @@ document.getElementById('logout-form').submit();">
                 <input type="text" class="form-control" name="status" id="subject" required>
               </div>
               <div class="text-center"><button type="submit">Kirim</button></div>
-            {{-- <form action="{{ route('Grooming.store') }}" method="POST" class="php-email-form">
-              @csrf
-              <div class="row">
-                <div class="form-group">
-                  <label for="name">Pemilik</label>
-                  <input type="text" class="form-control" name="pemilik" id="subject" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Tipe Grooming</label>
-                  <input type="text" name="tipe" class="form-control" id="subject" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Penanggungjawab</label>
-                  <input type="text" class="form-control" name="pj" id="subject" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Harga</label>
-                <input type="text" class="form-control" name="harga" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Harga Pokok</label>
-                <input type="text" class="form-control" name="hargapokok" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Status</label>
-                <input type="text" class="form-control" name="status" id="subject" required>
-              </div>
-              <div class="text-center"><button type="submit">Kirim</button></div>
-            </form> --}}
+            </form>
           </div>
 
         </div>

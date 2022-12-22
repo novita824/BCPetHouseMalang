@@ -134,7 +134,7 @@
             <td>{{ $gr->harga}}</td>
             <td>{{ $gr->hargapokok }}</td>
             <td>{{ $gr ->status }}</td>
-            <td><td>
+            <td>
               <form action="{{ route('Grooming.destroy', $gr->idgrooming) }}" method="POST">
                 <a class="btn btn-gradient-primary btn-sm" href="{{ route('Grooming.edit',$gr->idgrooming) }}">Edit</a>
                 @csrf

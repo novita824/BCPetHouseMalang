@@ -38,14 +38,9 @@ use App\Http\Controllers\FormGroomingController;
 // Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post');
 // Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::resource('Grooming', GroomingController::class);
-Route::get('/datagrooming', [GroomingController::class, 'index'])->name('groomingindex');
-Route::get('/tambahdatagrooming', [GroomingController::class, 'create'])->name('groomingcreate');
-
 Route::resource('Penitipan', PenitipanController::class);
-Route::get('/datapenitipan', [PenitipanControllerroller::class, 'index'])->name('penitipanindex');
-Route::get('/tambahdatapenitipan', [PenitipanController::class, 'create'])->name('penitipancreate');
-
 Route::resource('Produk', ProdukController::class);
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/formGrooming', function (){

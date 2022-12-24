@@ -10,19 +10,21 @@ class ProdukController extends Controller
 {
     public function index(Request $request)
     {
-        $pagination = 5;
-        $produk = Produk::when($request->keyword, function ($query) use ($request) {
-            $query
-                ->where('id', 'like', "%{$request->keyword}%")
-                ->orWhere('nama', 'like', "%{$request->keyword}%")
-                ->orWhere('jumlah', 'like', "%{$request->keyword}%")
-                ->orWhere('harga', 'like', "%{$request->keyword}%")
-                ->orWhere('hargapokok', 'like', "%{$request->keyword}%")
-                ->orWhere('total', 'like', "%{$request->keyword}%");
-        })->orderBy('id')->paginate($pagination);
+        $produk=Produk::all();
+        return view('Produk.index', compact('produk'));
+        // $pagination = 5;
+        // $produk = Produk::when($request->keyword, function ($query) use ($request) {
+        //     $query
+        //         ->where('id', 'like', "%{$request->keyword}%")
+        //         ->orWhere('nama', 'like', "%{$request->keyword}%")
+        //         ->orWhere('jumlah', 'like', "%{$request->keyword}%")
+        //         ->orWhere('harga', 'like', "%{$request->keyword}%")
+        //         ->orWhere('hargapokok', 'like', "%{$request->keyword}%")
+        //         ->orWhere('total', 'like', "%{$request->keyword}%");
+        // })->orderBy('id')->paginate($pagination);
 
-        return view('Produk.index', compact('produk'))
-            ->with('i', (request()->input('page', 1) - 1) * $pagination);
+        // return view('Produk.index', compact('produk'))
+        //     ->with('i', (request()->input('page', 1) - 1) * $pagination);
     }
 
     public function create()
@@ -58,10 +60,10 @@ class ProdukController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function edit($id)
+    public function edit($idproduk)
     {
         $this->authorize('admin');
-        $produk = produk::find($id);
+        $produk = produk::find($idproduk);
         return view('Produk.edit', compact('produk'));
     }
 
@@ -72,7 +74,7 @@ class ProdukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idproduk)
     {
         $request->validate([
             'nama' => 'required',
@@ -100,11 +102,11 @@ class ProdukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idproduk)
     {
         $this->authorize('admin');
         try {
-            Produk::find($id)->delete();
+            Produk::find($idproduk)->delete();
             return redirect()->route('Produk.index')
                 ->with('success', 'Produk Berhasil Dihapus');
         } catch (Throwable $error) {

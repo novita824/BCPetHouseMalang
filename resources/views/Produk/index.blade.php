@@ -106,7 +106,7 @@
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Data Penitipan Hewan</h4>
+                    <h4 class="card-title">Data Produk</h4>
                     </p>
                     <a href="{{ route('Produk.create') }}" type="button" class="btn btn-outline-primary btn-icon-text">
                       <i class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
@@ -118,24 +118,33 @@
                           <th> Harga </th>
                           <th> Harga Pokok </th>
                           <th> Total </th>
-                          <th> Status </th>
                           <th> Action </th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td> Herman Beck </td>
-                          <td> Paket Kos </td>
-                          <td> 05/12/2022 </td>
-                          <td> 11/12/2022 </td>
-                          <td> Rp 20.000,00 </td>
-                          <td><label class="badge badge-info">Selesai</label></td>
-                          <td>
-		                        <a href="{{ route('Produk.edit', $produk->id) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
-                            <a href="/produk/hapus/{{ $produk->$id }}"class="btn btn-gradient-danger btn-sm">Hapus</a>
-	                        </td>
-                        </tr>
+                        
+        @foreach ($produk as $p)
+        <tr>
+            <td>{{ $p->nama }}</td>
+            <td>{{ $p->jumlah }}</td>
+            <td>{{ $p->Harga }}</td>
+            <td>{{ $p->hargapokok }}</td>
+            <td>{{ $p ->total }}</td>
+            <td>
+              <form action="{{ route('Produk.destroy', $p->idproduk) }}" method="POST">
+                <a class="btn btn-gradient-primary btn-sm" href="{{ route('Produk.edit',$p->idproduk) }}">Edit</a>
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-gradient-danger btn-sm">Delete</button>
+            </form>
+              {{-- <a href="{{ route('Grooming.edit', $grooming->pemilik) }}" class="btn btn-gradient-primary btn-sm">Edit</a>
+              <a href="{{ route('Grooming.destroy', $grooming->pemilik) }}"class="btn btn-gradient-danger btn-sm">Hapus</a> --}}
+            </td>
+                {{-- @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-gradient-danger btn-sm">Hapus</button> --}}
                       </tbody>
+                      @endforeach
                     </table>
                   </div>
                 </div>

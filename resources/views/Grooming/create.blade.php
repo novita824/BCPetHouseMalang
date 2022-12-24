@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
+
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -91,7 +95,7 @@ document.getElementById('logout-form').submit();">
           </div>
         </div>
       </div>
-    </section><!-- End Cliens Section -->
+    </section><!-- End Cliens Section --> --}}
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -242,5 +246,5 @@ document.getElementById('logout-form').submit();">
   <script src="assets/js/main.js"></script>
 
 </body>
-
-</html>
+@endsection
+{{-- </html> --}}

@@ -35,17 +35,26 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="user.html">BC PET HOUSE</a></h1>
+      <h1 class="logo me-auto"><a href="home">BC PET HOUSE</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="user.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="user.html">Profile</a></li>
-          <li><a class="nav-link scrollto" href="user.html">Service</a></li>
-          <li><a class="nav-link   scrollto" href="user.html">Product</a></li>
-          <li><a class="nav-link scrollto" href="user.html">Contact</a></li>
+          <li><a class="nav-link scrollto active" href="home">Home</a></li>
+          <li><a class="nav-link scrollto" href="home">Profile</a></li>
+          <li><a class="nav-link scrollto" href="home">Service</a></li>
+          <li><a class="nav-link   scrollto" href="home">Product</a></li>
+          <li><a class="nav-link scrollto" href="home">Contact</a></li>
+          <li> <a class="dropdown-item" href="{{ url('login') }}"
+            onclick="event.preventDefault();
+document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -60,10 +69,6 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>SELAMAT DATANG DI BC PET HOUSE</h1>
           <h2>We Love We Care</h2>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#signin" class="btn-get-started scrollto">Sign In</a>
-            <a href="register.html" class="btn-get-started scrollto">Register</a>
-          </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
           <img src="assets/img/Ilustrasi.png" class="img-fluid animated" alt="">
@@ -92,60 +97,71 @@
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
-      <div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div>
-            <h2>Add New Produk</h2>
+        <div class="section-title">
+          <h2>Tambah Data Produk</h2>
+          <p>data-data produk yang ingin di tambahkan</p>
         </div>
-        <div>
-            <a class="btn btn-primary" href="{{ route('Produk.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
-   
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
-   
-   <form action="{{ route('Produk.store') }}" method="POST">
-       @csrf
-     
+
         <div class="row">
-           <div class="col-xs-12 col-sm-12 col-md-12">
-               <div class="form-group">
-                   <strong>Nama:</strong>
-                   <input type="text" name="nama" class="form-control" placeholder="Nama">
-               </div>
-           </div>
-           <div class="col-xs-12 col-sm-12 col-md-12">
-               <div class="form-group">
-                   <strong>Produk:</strong>
-                   <input class="form-control" name="produk" placeholder="Produk"></input>
-               </div>
-           </div>
-           <div class="col-xs-12 col-sm-12 col-md-12">
-               <div class="form-group">
-                   <strong>Total Produk:</strong>
-                   <input type="text" name="totalproduk" class="form-control" placeholder="TotalProduk">
-               </div>
-           </div>
-           <div class="col-xs-12 col-sm-12 col-md-12">
-               <div class="form-group">
-                   <strong>Total Harga:</strong>
-                   <input class="form-control" name="totalharga" placeholder="TotalHarga"></input>
-               </div>
-           </div>
-           <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
-               <button type="submit" class="btn btn-success">Submit</button>
-           </div>
-       </div>
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="{{ route('Produk.store') }}" method="POST" class="php-email-form">
+              @csrf
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Nama</label>
+                  <input type="text" class="form-control" name="nama" id="subject" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Jumlah</label>
+                  <input type="text" class="form-control" name="jumlah" id="subject" required>
+                </div>
+              <div class="form-group">
+                <label for="name">Harga</label>
+                <input type="text" class="form-control" name="harga" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Harga Pokok</label>
+                <input type="text" class="form-control" name="hargapokok" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Total</label>
+                <input type="text" class="form-control" name="total" id="subject" required>
+              </div>
+              <div class="text-center"><button type="submit">Kirim</button></div>
+            {{-- <form action="{{ route('Grooming.store') }}" method="POST" class="php-email-form">
+              @csrf
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Pemilik</label>
+                  <input type="text" class="form-control" name="pemilik" id="subject" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Tipe Grooming</label>
+                  <input type="text" name="tipe" class="form-control" id="subject" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Penanggungjawab</label>
+                  <input type="text" class="form-control" name="pj" id="subject" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Harga</label>
+                <input type="text" class="form-control" name="harga" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Harga Pokok</label>
+                <input type="text" class="form-control" name="hargapokok" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Status</label>
+                <input type="text" class="form-control" name="status" id="subject" required>
+              </div>
+              <div class="text-center"><button type="submit">Kirim</button></div>
+            </form> --}}
+          </div>
+
+        </div>
+
       </div>
     </section><!-- End Contact Section -->
 
@@ -171,19 +187,19 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="user.html">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="user.html">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="user.html">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="user.html">Product</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="user.html">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home">Product</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home">Contact</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Service Kami</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Penginapan Hewan</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Grooming</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="Penitipan">Penginapan Hewan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="Grooming">Grooming</a></li>
             </ul>
           </div>
 

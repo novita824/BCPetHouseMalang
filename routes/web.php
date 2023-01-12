@@ -11,6 +11,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\FormGroomingController;
 
+use App\Http\Controllers\ClientController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,11 +43,36 @@ Route::resource('Grooming', GroomingController::class);
 Route::resource('Penitipan', PenitipanController::class);
 Route::resource('Produk', ProdukController::class);
 
+
+
+Route::post('/update/gromming', [GroomingController::class, 'update'])->name('GroomingUpdate');
+
+Route::post('/update/penitipan', [PenitipanController::class, 'update'])->name('PenitipanUpdate');
+
+Route::post('/update/produk', [ProdukController::class, 'update'])->name('update.produk');
+
+Route::post('/komentar/create', [HomeController::class, 'komentarcreate'])->name('komentar.create');
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/formGrooming', function (){
     return view('FormGrooming');
 });
+
+Route::post('/formPenitipan/create',[ClientController::class, 'clientcreate'])->name('formPenitipan');
+
+Route::get('/formPenitipan/edit/{id?}',[ClientController::class, 'editclientcreate'])->name('PenitipanClient.edit');
+
+Route::get('/formPenitipan/detail/{id?}',[ClientController::class, 'detailclientcreate'])->name('PenitipanClient.detail');
+
+Route::get('/formPenitipan/destroy/{id?}',[ClientController::class, 'deleteclientcreate'])->name('PenitipanClient.delete');
+
+Route::post('/formGromming/create',[ClientController::class, 'clientcreategromming'])->name('formGromming');
+
+Route::get('/formGromming/edit/{id?}',[ClientController::class, 'editclientgromming'])->name('formGromming.edit');
+
+Route::get('/formGromming/delete/{id?}',[ClientController::class, 'deleteclientgromming'])->name('formGromming.delete');
+
 Route::get('/formPenitipan', function (){
     return view('FormPenitipan');
 });

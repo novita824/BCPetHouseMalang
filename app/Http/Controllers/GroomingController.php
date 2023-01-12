@@ -17,7 +17,8 @@ class GroomingController extends Controller
     public function index()
     {
         $grooming=Grooming::all();
-        return view('Grooming.index', compact('grooming'));
+        $client =  \App\Models\ClientGromming::all();
+        return view('Grooming.index', ['grooming' => $grooming, 'client' => $client]);
         // $grooming = DB::table('grooming')->get();
         // $paginate = Grooming::orderBy('idgrooming', 'asc')->paginate(5);
         // return view('Grooming.index', ['grooming' => $grooming, 'paginate' =>$paginate]);
@@ -83,7 +84,7 @@ class GroomingController extends Controller
 
     public function edit($idgrooming)
     {
-        $this->authorize('admin');
+        // $this->authorize('admin');
         $grooming = Grooming::find($idgrooming);
         return view('Grooming.edit', ['grooming' => $grooming]);
     }
@@ -95,9 +96,9 @@ class GroomingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $idgrooming)
+    public function update(Request $request)
     {
-        $grooming =Grooming::find($idgrooming);
+        $idgrooming = $request->id;
         $request->validate([
             'nogrooming' => 'required',
             'pemilik' => 'required',
@@ -113,7 +114,8 @@ class GroomingController extends Controller
         //  //jika data berhasil diupdate, akan kembali ke halaman utama
         //  return redirect()->route('Grooming.index')
         //  ->with('success', 'Grooming Berhasil Diupdate');
-        $grooming = Grooming::where('nogrooming', $idgrooming)->first();
+        $grooming = Grooming::where('idgrooming', $idgrooming)->first();
+
         $grooming->update([
             'nogrooming' => $request->get('nogrooming'),
             'pemilik' => $request->get('pemilik'),
@@ -136,8 +138,8 @@ class GroomingController extends Controller
      */
     public function destroy($idgrooming)
     {
-        $this->authorize('admin');
+        // $this->authorize('admin');
         Grooming::destroy($idgrooming);
-        return redirect('Grooming.index')->with('toast_success', 'Data grooming berhasil di hapus!');
+        return redirect()->route('Grooming.index')->with('toast_success', 'Data grooming berhasil di hapus!');
     }
 }

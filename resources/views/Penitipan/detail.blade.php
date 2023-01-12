@@ -90,79 +90,79 @@
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="Produk"> Product </a></li>
                   <li class="nav-item"> <a class="nav-link" href="Grooming"> Grooming </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="Penitipan"> Penitipan </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{{ route('Penitipan.index') }}"> Penitipan </a></li>
                 </ul>
               </div>
             </li>
           </ul>
         </nav>
         <!-- partial -->
-
-    <!-- ======= Contact Section ======= -->
-    <div class="main-panel">
-      <div class="content-wrapper">
-        <div class="page-header">
-          <h3 class="right" class="page-title"> EDIT DATA PENITIPAN </h3>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info"></br>
-                <h4>List Paket Penitipan</h4><br/><br/>
-                <h4>* Paket Kos :</h4>
-                <p>Rp 20.000,00</p>
-                <h4>* Paket Losman :</h4>
-                <p>Rp 25.000,00</p>
-                <h4>* Paket Apartemen :</h4>
-                <p>Rp 35.000,00</p>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> DETAIL </h3>
             </div>
-          </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="{{ route('PenitipanUpdate') }}" method="POST" class="php-email-form">
-              @csrf
-              <div class="row">
-                <input type="hidden" name="id" value="{{ $penitipan->idpenitipan }}">
-                <div class="form-group">
-                  <label for="name">No</label>
-                  <input type="text" value="{{ $penitipan->nopenitipan }}"class="form-control" name="nopenitipan" id="subject" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Pemilik</label>
-                  <input type="text" value="{{ $penitipan->pemilik }}" class="form-control" name="pemilik" id="subject" required>
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                <input type="hidden" name="id" value="{{ $penitipan->id }}" >
+                <div class="form-group col-md-6">
+                  <label for="name">Nama Hewan</label>
+                  <input type="text" value="{{ $penitipan->namahewan }}" name="namahewan" class="form-control" id="subject" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Tipe Penitipan</label>
-                  <input type="text" value="{{ $penitipan->tipe }}" name="tipe" class="form-control" id="subject" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Penanggungjawab</label>
-                  <input type="text" value="{{ $penitipan->pj }}" class="form-control" name="pj" id="subject" required>
+                  <label for="name">Nama Pemilik</label>
+                  <input type="text" value="{{ $penitipan->namapemilik }}" class="form-control" name="email" id="subject" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Harga</label>
-                <input type="text" value="{{ $penitipan->harga }}" class="form-control" name="harga" id="subject" required>
+                <label for="name">Alamat (beserta sharelock)</label>
+                <input type="text" value="{{ $penitipan->alamat}}" class="form-control" name="alamat" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Harga Pokok</label>
-                <input type="text" value="{{ $penitipan->hargapokok }}" class="form-control" name="hargapokok" id="subject" required>
+                <label for="name">Sedia Pet Cargo (Ya/Tidak)</label>
+                <input type="text" value="{{ $penitipan->petcargo }}" class="form-control" name="sediapetcargo" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Status</label>
-                <input type="text" value="{{ $penitipan->status }}" class="form-control" name="status" id="subject" required>
+                <label for="name">Sedia Kandang (Ya/Tidak)</label>
+                <input type="text"  value="{{ $penitipan->kandang }}" class="form-control" name="sediakandang" id="subject" required>
               </div>
-              <div class="text-center"><button class="btn btn-gradient-primary btn-sm" type="submit">Update</button></div>
-           </form>
+              <div class="form-group">
+                <label for="name">Tanggal Penitipan (Tanggal)</label>
+                <input type="date" value="{{ $penitipan->tanggal }}" class="form-control" name="tanggalpenitipan" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Jenis Paket</label>
+                <input type="text" value="{{ $penitipan->jenispaket }}" class="form-control" name="jenispaket" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">1. Sehari biasa makan berapa kali</label>
+                <input type="text" value="{{ $penitipan->berapakalimakan }}" class="form-control" name="berapakalimakan" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">2. Pakan</label>
+                <input type="text" value="{{ $penitipan->pakan }}" class="form-control" name="pakan" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">3. Riwayat Vaksin</label>
+                <input type="text" value="{{ $penitipan->riwayatvaksin }}" class="form-control" name="riwayatvaksin" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">4. Kontak yang bisa dihubungi (WhatsApp)</label>
+                <input type="text" value="{{ $penitipan->kontak }}" class="form-control" name="kontak" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">5. Riwayat Penyakit</label>
+                <input type="text" value="{{ $penitipan->riwayatpenyakit }}" class="form-control" name="riwayatpenyakit" id="subject" required>
+              </div>
+                  </div>
+                </div>
+              </div>
+
           </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
- <!-- content-wrapper ends -->
+          <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">
             <div class="container-fluid d-flex justify-content-between">

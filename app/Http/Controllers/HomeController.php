@@ -21,4 +21,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function komentarcreate(Request $request){
+       \App\Models\Komentar::create(['nama' => $request->nama, 'email' => $request->email, 'judul' => $request->judul, 'komentar' => $request->komentar]);
+
+       return redirect('home');
+    }
 }

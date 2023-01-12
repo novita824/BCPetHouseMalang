@@ -122,7 +122,8 @@ document.getElementById('logout-form').submit();">
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form name="google-sheet" action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form name="google-sheet" action="{{ route('formPenitipan') }}" method="post" role="form" class="php-email-form">
+              @csrf
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Nama Hewan</label>
@@ -146,8 +147,8 @@ document.getElementById('logout-form').submit();">
                 <input type="text" class="form-control" name="sediakandang" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Tanggal Penitipan (Tanggal h0-hx)</label>
-                <input type="text" class="form-control" name="tanggalpenitipan" id="subject" required>
+                <label for="name">Tanggal Penitipan (Tanggal)</label>
+                <input type="date" class="form-control" name="tanggalpenitipan" id="subject" required>
               </div>
               <div class="form-group">
                 <label for="name">Jenis Paket</label>
@@ -261,11 +262,11 @@ document.getElementById('logout-form').submit();">
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
+  <!-- <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyA2fcsm8b4OA2KFmHyxMopQa0UuROuZ7trCgnAXemAsR3Awqjgfngu-QimmCzns6Bqmg/exec'
     const form = document.forms['google-sheet']
     
@@ -276,6 +277,6 @@ document.getElementById('logout-form').submit();">
         .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Data gagal terkirim!.</div>"))
         form.reset();
     })
-</script>
+</script> -->
 </body>
 </html>

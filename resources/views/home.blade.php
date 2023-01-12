@@ -133,9 +133,9 @@ document.getElementById('logout-form').submit();">
                 </div>
 
                 <div class="row" style="transform: translate(25%, 5%);">
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch"  data-aos="zoom-in"
                         data-aos-delay="100">
-                        <div class="icon-box">
+                        <div class="icon-box" style="padding: 10px !important;">
                             <div class="icon"><i class="bx bxl-dribbble"></i></div>
                             <h4><a href="formPenitipan">Penitipan</a></h4>
                             <p>Pada penitipan ini khusus untuk hewan peliharaan seperti anjing dan kucing</p>
@@ -144,7 +144,7 @@ document.getElementById('logout-form').submit();">
 
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                         data-aos-delay="200">
-                        <div class="icon-box">
+                        <div class="icon-box" style="padding: 10px !important;">
                             <div class="icon"><i class="bx bx-file"></i></div>
                             <h4><a href="formGrooming">Grooming</a></h4>
                             <p>Layanan yang Menyediakan Grooming untuk hewan peliharaan yang terjamin dengan kepuasan
@@ -269,84 +269,6 @@ document.getElementById('logout-form').submit();">
                                     class="bx bx-money"></i></a>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"
-                                alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Maxi Cat</h4>
-                            <p>Rp 15.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"
-                                alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Bolt Tuna 500g</h4>
-                            <p>Rp 12.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"
-                                alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Cleo Persia 500g</h4>
-                            <p>Rp 22.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"
-                                alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Bold Kitten 1 Kg</h4>
-                            <p>Rp 25.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"
-                                alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Bold Kitten 500g</h4>
-                            <p>Rp 14.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"
-                                alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Ori Cat</h4>
-                            <p>Rp 22.000,00</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section><!-- End Product Section -->
@@ -381,7 +303,8 @@ document.getElementById('logout-form').submit();">
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form name="google-sheet" action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form  action="{{ route('komentar.create') }}" method="post" role="form" class="php-email-form">
+                             @csrf
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Nama</label>
@@ -394,7 +317,7 @@ document.getElementById('logout-form').submit();">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="name">Judul</label>
+                                <label for="name">Rating</label>
                                 <input type="text" class="form-control" name="judul" id="subject" required>
                             </div>
                             <div class="form-group">
@@ -505,7 +428,7 @@ document.getElementById('logout-form').submit();">
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>

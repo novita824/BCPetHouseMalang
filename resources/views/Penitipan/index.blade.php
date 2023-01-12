@@ -88,7 +88,7 @@
               </a>
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="produk"> Product </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="Produk"> Product </a></li>
                   <li class="nav-item"> <a class="nav-link" href="Grooming"> Grooming </a></li>
                   <li class="nav-item"> <a class="nav-link" href="Penitipan"> Penitipan </a></li>
                 </ul>
@@ -107,7 +107,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Data Penitipan Hewan</h4>
-                    </p>
+                  
                     <a href="{{ route('Penitipan.create') }}"  type="button" class="btn btn-outline-primary btn-icon-text">
                       <i class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
                     <table class="table table-striped">
@@ -133,7 +133,7 @@
                             <td>{{ $pn->harga}}</td>
                             <td>{{ $pn->hargapokok }}</td>
                             <td>{{ $pn ->status }}</td>
-                            <td><td>
+                            <td>
                               <form action="{{ route('Penitipan.destroy', $pn->idpenitipan) }}" method="POST">
                                 <a class="btn btn-gradient-primary btn-sm" href="{{ route('Penitipan.edit',$pn->idpenitipan) }}">Edit</a>
                                 @csrf
@@ -146,12 +146,55 @@
                                 {{-- @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-gradient-danger btn-sm">Hapus</button> --}}
-                                      </tbody>
                                       @endforeach
+                          </tbody>
                     </table>
                   </div>
                 </div>
               </div>
+
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Data Client Penitipan Hewan</h4>
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th> No </th>
+                            <th> Nama Pemilik </th>
+                            <th> Nama Hewan </th>
+                            <th> Jenis Paket</th>
+                            <th> Kontak </th>
+                            <th> Alamat </th>
+                            <th> Tanggal </th>
+                            <th> Action </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @foreach($client as $key => $value)
+                          <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td> {{ $value->namapemilik }} </td>
+                            <td> {{ $value->namahewan }} </td>
+                            <td> {{ $value->jenispaket }} </td>
+                            <td> {{ $value->kontak }} </td>
+                            <td> {{ $value->alamat }} </td>
+                            <td> {{ $value->tanggal }} </td>
+                            <td>
+                               <a class="btn btn-gradient-primary btn-sm" href="{{ route('PenitipanClient.edit',$value->id) }}">Edit</a>
+
+                               <a class="btn btn-gradient-info btn-sm" href="{{ route('PenitipanClient.detail',$value->id) }}">Detail</a>
+
+                               <a class="btn btn-gradient-danger btn-sm" href="{{ route('PenitipanClient.delete',$value->id) }}">Delete</a>
+                            </td>
+                          </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                  </div>
+                </div>
+              </div>
+
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->

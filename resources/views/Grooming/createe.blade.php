@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
+
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -91,93 +95,66 @@ document.getElementById('logout-form').submit();">
           </div>
         </div>
       </div>
-    </section><!-- End Cliens Section -->
+    </section><!-- End Cliens Section --> --}}
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Grooming</h2>
-          <p>Isi form dan check terlebih dahulu untuk data form grooming hewan peliharaan</p>
+          <h2>Tambah Data Grooming</h2>
+          <p>Disini menyediakan berbagai macam tipe grooming</p>
         </div>
 
         <div class="row">
           <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info"><br/>
-              <h4>List Tipe Grooming</h4><br/><br/>
+            <div class="info"></br>
+              <h4>Tipe Grooming</h4></br></br>
                 <h4>* Regular :</h4>
                 <p>Rp 40.000,00</p>
-                <h4>* Regular (Kitten) :</h4>
-                <p>Rp 30.000,00</p>
-                <h4>* Regular (Anjing) :</h4>
-                <p>Rp 50.000,00</p>
                 <h4>* Kutu/Jamur :</h4>
                 <p>Rp 50.000,00</p>
-                <h4>* Kutu/Jamur (Kitten) :</h4>
-                <p>Rp 40.000,00</p>
-                <h4>* Kutu/Jamur (Anjing) :</h4>
-                <p>Rp 65.000,00</p>
                 <h4>* Lengkap :</h4>
                 <p>Rp 55.000,00</p>
                 <h4>* Sebazol :</h4>
                 <p>Rp 70.000,00</p>
                 <h4>* Kering :</h4>
                 <p>Rp 20.000,00</p>
-                <br/>
-                <h4>* Harga untuk penambahan</h4>
-                <br/>
-                <p>- DEGREASER (+ Rp10.000,00)</p>
-                <p>- WHITENING (+ Rp5.000,00)</p>
-                <br/>
-                <h5>Jika terdapat kendala atau cancel</h5>
-                <h6>Klik dibawah ini untuk menghubungi kami</h6>
-                <a href="https://bit.ly/BCPetHouse" class="center"><button type="submit">BC Pet House</button></a>
-                <br/><br/>
             </div>
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form name="google-sheet" action="{{ route('formGromming') }}" method="post" role="form" class="php-email-form">
-               @csrf
+            <form action="{{ route('Grooming.store') }}" method="POST" class="php-email-form">
+              @csrf
               <div class="row">
                 <div class="form-group">
-                  <label for="name">Nama</label>
-                  <input type="text" class="form-control" name="nama" id="subject" required>
+                  <label for="name">No</label>
+                  <input type="text" class="form-control" name="nogrooming" id="subject" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Pemilik</label>
+                  <input type="text" class="form-control" name="pemilik" id="subject" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Nama Hewan</label>
-                  <input type="text" name="namahewan" class="form-control" id="subject" required>
+                  <label for="name">Tipe Grooming</label>
+                  <input type="text" name="tipe" class="form-control" id="subject" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Jenis Hewan</label>
-                  <input type="text" class="form-control" name="jenishewan" id="subject" required>
+                  <label for="name">Penanggungjawab</label>
+                  <input type="text" class="form-control" name="pj" id="subject" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Umur</label>
-                <input type="text" class="form-control" name="umur" id="subject" required>
+                <label for="name">Harga</label>
+                <input type="text" class="form-control" name="harga" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Alamat</label>
-                <input type="text" class="form-control" name="alamat" id="subject" required>
+                <label for="name">Harga Pokok</label>
+                <input type="text" class="form-control" name="hargapokok" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">No.Telp (WhatsApp)</label>
-                <input type="text" class="form-control" name="notelp" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Tipe Grooming</label>
-                <input type="text" class="form-control" name="tipegrooming" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Sedia Pet Cargo (Ya/Tidak)</label>
-                <input type="text" class="form-control" name="sediapetcargo" id="subject" required>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <label for="name">Status</label>
+                <input type="text" class="form-control" name="status" id="subject" required>
               </div>
               <div class="text-center"><button type="submit">Kirim</button></div>
             </form>
@@ -263,25 +240,11 @@ document.getElementById('logout-form').submit();">
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
- <!--  <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwvCm5aR-ofLsnF2s5Fc-Lw5vNmrjz5xjs0KIHhOdunXYEalX2EzQZnUhpHRZHsKsHROg/exec'
-      const form = document.forms['google-sheet']
-      
-      form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => $("#form_alerts").html("<div class='alert alert-success'>Data berhasil dikirim.</div>"))
-          .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Data gagal terkirim!.</div>"))
-          form.reset();
-      })
-  </script> -->
 
 </body>
-
-</html>
+@endsection
+{{-- </html> --}}

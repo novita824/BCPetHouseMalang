@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BC Pet House</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../assets2/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../assets2/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="{{ asset('assets2/vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets2/vendors/css/vendor.bundle.base.css') }}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../../assets2/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets2/css/style.css') }}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets2/images/logo2.png" />
+    <link rel="shortcut icon" href="{{ asset('assets2/images/logo2.png') }}" />
   </head>
   <body>
     <div class="container-scroller">
@@ -88,7 +88,7 @@
               </a>
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="product"> Product </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="Produk"> Product </a></li>
                   <li class="nav-item"> <a class="nav-link" href="Grooming"> Grooming </a></li>
                   <li class="nav-item"> <a class="nav-link" href="Penitipan"> Penitipan </a></li>
                 </ul>
@@ -107,7 +107,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Data Grooming Hewan</h4>
-                    </p>
+          
                     <a href="{{ route('Grooming.create') }}" type="button" class="btn btn-outline-primary btn-icon-text">
                       <i class="mdi mdi-file-check btn-icon-prepend"></i> Tambah Data </a>
                     <table class="table table-striped">
@@ -153,6 +153,54 @@
                   </div>
                 </div>
               </div>
+
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Data Client Grooming Hewan</h4>
+                    <div style="overflow: auto;">
+                      <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th> No </th>
+                          <th> Nama Pemilik </th>
+                          <th> Nama Hewan</th>
+                          <th> Jenis Hewan </th>
+                          <th> Umur </th>
+                          <th> Notelp </th>
+                          <th> Tipe Gromming</th>
+                          <th> Pet Cargo</th>
+                          <th> Alamat </th>
+                          <th> Action </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @foreach($client as $key => $value)
+                          <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $value->nama }}</td>
+                            <td>{{ $value->namahewan }}</td>
+                            <td>{{ $value->jenishewan }}</td>
+                            <td>{{ $value->umur }}</td>
+                            <td>{{ $value->notelp }}</td>
+                            <td>{{ $value->tipegrooming }}</td>
+                            <td>{{ $value->sediapetcargo }}</td>
+                            <td>{{ $value->alamat }}</td>
+                            <td>
+                               <a class="btn btn-gradient-primary btn-sm" href="{{ route('formGromming.edit',$value->id) }}">Edit</a>
+
+                               <a class="btn btn-gradient-danger btn-sm" href="{{ route('formGromming.delete',$value->id) }}">Delete</a>
+                            </td>
+
+                          </tr>
+                          @endforeach
+                      </tbody>
+                    </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
@@ -169,14 +217,14 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../assets2/vendors/js/vendor.bundle.base.js"></script>
+    <script src="{{ asset('assets2/vendors/js/vendor.bundle.base.js') }}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../assets2/js/off-canvas.js"></script>
-    <script src="../../assets2/js/hoverable-collapse.js"></script>
-    <script src="../../assets2/js/misc.js"></script>
+    <script src="{{ asset('assets2/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('assets2/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('assets2/js/misc.js') }}"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->

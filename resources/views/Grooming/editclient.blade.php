@@ -99,70 +99,76 @@
         <!-- partial -->
 
     <!-- ======= Contact Section ======= -->
-    <div class="main-panel">
-      <div class="content-wrapper">
-        <div class="page-header">
-          <h3 class="right" class="page-title"> EDIT DATA PENITIPAN </h3>
-        </div>
+   <!-- partial -->
+   <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="page-header">
+        <h3 class="right" class="page-title"> EDIT DATA GROOMING </h3>
+      </div>
 
         <div class="row">
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info"></br>
-                <h4>List Paket Penitipan</h4><br/><br/>
-                <h4>* Paket Kos :</h4>
+              <h4>List Paket Grooming</h4></br>
+                <h4>* Regular :</h4>
+                <p>Rp 40.000,00</p>
+                <h4>* Kutu/Jamur :</h4>
+                <p>Rp 50.000,00</p>
+                <h4>* Lengkap :</h4>
+                <p>Rp 55.000,00</p>
+                <h4>* Sebazol :</h4>
+                <p>Rp 70.000,00</p>
+                <h4>* Kering :</h4>
                 <p>Rp 20.000,00</p>
-                <h4>* Paket Losman :</h4>
-                <p>Rp 25.000,00</p>
-                <h4>* Paket Apartemen :</h4>
-                <p>Rp 35.000,00</p>
             </div>
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="{{ route('PenitipanUpdate') }}" method="POST" class="php-email-form">
-              @csrf
+            <form name="google-sheet" action="{{ route('formGromming') }}" method="post" role="form" class="php-email-form">
+               @csrf
+               <input type="hidden" name="id" value="{{ $gromming->id }}">
               <div class="row">
-                <input type="hidden" name="id" value="{{ $penitipan->idpenitipan }}">
                 <div class="form-group">
-                  <label for="name">No</label>
-                  <input type="text" value="{{ $penitipan->nopenitipan }}"class="form-control" name="nopenitipan" id="subject" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Pemilik</label>
-                  <input type="text" value="{{ $penitipan->pemilik }}" class="form-control" name="pemilik" id="subject" required>
+                  <label for="name">Nama</label>
+                  <input type="text" value="{{ $gromming->nama }}" class="form-control" name="nama" id="subject" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Tipe Penitipan</label>
-                  <input type="text" value="{{ $penitipan->tipe }}" name="tipe" class="form-control" id="subject" required>
+                  <label for="name">Nama Hewan</label>
+                  <input type="text" value="{{ $gromming->namahewan }}" name="namahewan" class="form-control" id="subject" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Penanggungjawab</label>
-                  <input type="text" value="{{ $penitipan->pj }}" class="form-control" name="pj" id="subject" required>
+                  <label for="name">Jenis Hewan</label>
+                  <input type="text" value="{{ $gromming->jenishewan }}" class="form-control" name="jenishewan" id="subject" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Harga</label>
-                <input type="text" value="{{ $penitipan->harga }}" class="form-control" name="harga" id="subject" required>
+                <label for="name">Umur</label>
+                <input type="text" value="{{ $gromming->umur }}" class="form-control" name="umur" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Harga Pokok</label>
-                <input type="text" value="{{ $penitipan->hargapokok }}" class="form-control" name="hargapokok" id="subject" required>
+                <label for="name">Alamat</label>
+                <input type="text" value="{{ $gromming->alamat }}" class="form-control" name="alamat" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Status</label>
-                <input type="text" value="{{ $penitipan->status }}" class="form-control" name="status" id="subject" required>
+                <label for="name">No.Telp (WhatsApp)</label>
+                <input value="{{ $gromming->notelp }}" type="text" class="form-control" name="notelp" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Tipe Grooming</label>
+                <input type="text" value="{{ $gromming->tipegrooming }}" class="form-control" name="tipegrooming" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Sedia Pet Cargo (Ya/Tidak)</label>
+                <input value="{{ $gromming->sediapetcargo }}" type="text" class="form-control" name="sediapetcargo" id="subject" required>
               </div>
               <div class="text-center"><button class="btn btn-gradient-primary btn-sm" type="submit">Update</button></div>
-           </form>
+            </form>
           </div>
 
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
- <!-- content-wrapper ends -->
+    <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">
             <div class="container-fluid d-flex justify-content-between">

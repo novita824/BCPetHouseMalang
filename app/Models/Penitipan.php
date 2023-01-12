@@ -9,7 +9,7 @@ class Penitipan extends Model
 {
     use HasFactory;
     protected $table = 'penitipan';
-    
+    protected $primaryKey = 'idpenitipan';
     protected $fillable = [
         'nopenitipan',
         'pemilik',

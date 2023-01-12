@@ -13,7 +13,10 @@ class PenitipanController extends Controller
     public function index(Request $request)
     {
         $penitipan=Penitipan::all();
-        return view('Penitipan.index', compact('penitipan'));
+        $client = \App\Models\ClientPenitipan::all();
+        return view('Penitipan.index', ['penitipan' => $penitipan, 'client' =>$client]);
+
+
         // $pagination = 5;
         // $Penitipan = Penitipan::when($request->keyword, function ($query) use ($request) {
         //     $query
@@ -49,8 +52,9 @@ class PenitipanController extends Controller
 
     public function edit($idpenitipan)
     {
-        $this->authorize('admin');
-        $Penitipan = Penitipan::find($idpenitipan);
+        // $this->authorize('admin');
+        $penitipan = Penitipan::find($idpenitipan);
+
         return view('Penitipan.edit', compact('penitipan'));
     }
 
@@ -78,8 +82,9 @@ class PenitipanController extends Controller
         return redirect()->route('Penitipan.index')->with('succes','Data Berhasil di Input');
     }
 
-    public function update(Request $request, $idpenitipan)
+    public function update(Request $request)
     {
+        $idpenitipan = $request->id;
         $request->validate([
             'nopenitipan' => 'required',
             'pemilik' => 'required',
@@ -89,7 +94,7 @@ class PenitipanController extends Controller
             'hargapokok' => 'required',
             'status' => 'required',
         ]);
-        $Penitipan = Penitipan::where('nopenitipan', $idpenitipan)->first();
+        $Penitipan = Penitipan::where('idpenitipan', $idpenitipan)->first();
         $Penitipan->update([
             'nopenitipan' => $request->get('nopenitipan'),
             'pemilik' => $request->get('pemilik'),
@@ -100,7 +105,7 @@ class PenitipanController extends Controller
             'status' => $request->get('status'),
         ]);
 
-        return redirect()->route('penitipan.index')
+        return redirect()->route('Penitipan.index')
             ->with('success', 'Penitipan Berhasil Diupdate');
     }
 
@@ -112,15 +117,21 @@ class PenitipanController extends Controller
      */
     public function destroy($idpenitipan)
     {
-        $this->authorize('admin');
+        // $this->authorize('admin');
         try {
             Penitipan::find($idpenitipan)->delete();
-            return redirect()->route('penitipan.index')
+            return redirect()->route('Penitipan.index')
                 ->with('success', 'Penitipan Berhasil Dihapus');
         } catch (Throwable $error) {
             report($error);
-            return redirect()->route('penitipan.index')
+            return redirect()->route('Penitipan.index')
                 ->with('errors', 'Mohon Maaf Data Penitipan Belum Bisa Dihapus. Coba Lagi Nanti');
         }
+    }
+
+
+
+    public function clientcreate(Request $request){
+        dd($request->all());
     }
 }

@@ -127,12 +127,12 @@
         <tr>
             <td>{{ $p->nama }}</td>
             <td>{{ $p->jumlah }}</td>
-            <td>{{ $p->Harga }}</td>
+            <td>{{ $p->harga }}</td>
             <td>{{ $p->hargapokok }}</td>
             <td>{{ $p ->total }}</td>
             <td>
-              <form action="{{ route('Produk.destroy', $p->idproduk) }}" method="POST">
-                <a class="btn btn-gradient-primary btn-sm" href="{{ route('Produk.edit',$p->idproduk) }}">Edit</a>
+              <a class="btn btn-gradient-primary btn-sm" href="{{ route('Produk.edit',$p->id) }}">Edit</a>
+              <form action="{{ route('Produk.destroy', $p->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-gradient-danger btn-sm">Delete</button>

@@ -62,9 +62,9 @@ class ProdukController extends Controller
 
     public function edit($idproduk)
     {
-        $this->authorize('admin');
+        // $this->authorize('admin');
         $produk = produk::find($idproduk);
-        return view('Produk.edit', compact('produk'));
+        return view('Produk.edit', ['pk' => $produk]);
     }
 
     /*  *
@@ -74,7 +74,7 @@ class ProdukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $idproduk)
+    public function update(Request $request)
     {
         $request->validate([
             'nama' => 'required',
@@ -83,7 +83,7 @@ class ProdukController extends Controller
             'hargapokok' => 'required',
             'total' => 'required',
         ]);
-        $Produk = Produk::where('id', $id)->first();
+        $Produk = Produk::where('id', $request->id)->first();
         $Produk->update([
             'nama' => $request->get('nama'),
             'jumlah' => $request->get('jumlah'),
@@ -104,7 +104,7 @@ class ProdukController extends Controller
      */
     public function destroy($idproduk)
     {
-        $this->authorize('admin');
+        // $this->authorize('admin');
         try {
             Produk::find($idproduk)->delete();
             return redirect()->route('Produk.index')

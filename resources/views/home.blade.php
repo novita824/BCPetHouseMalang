@@ -74,7 +74,7 @@ document.getElementById('logout-form').submit();">
                     <h2>We Love We Care</h2>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/img/Ilustrasi.png" class="img-fluid animated" alt="">
+                    <img src="assets/img/Maskot.png" class="img-fluid animated" alt="">
                 </div>
             </div>
         </div>

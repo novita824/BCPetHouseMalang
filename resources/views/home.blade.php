@@ -107,11 +107,11 @@ document.getElementById('logout-form').submit();">
                 <div class="row content">
                     <div class="center" align="center">
                         <p>
-                            BC Pet House adalah Salah satu pethop yang berada di malang tepatnya berada di dinoyo kota
-                            malang.
+                            BC Pet House adalah Salah satu pethop yang berada di malang tepatnya berada di Dinoyo, dan Batu kota
+                            Malang.
                         </p>
                         <p>
-                            BC Pet House telah lama didirikan selama 2 tahun pethop ini telah beroperasi, dan
+                            BC Pet House telah lama didirikan selama 2 tahun petshop ini telah beroperasi, dan
                         </p>
                         <p>
                             jam buka adalah setiap hari namun dikhususkan pada hari minggu BC Pet House buka hingga jam

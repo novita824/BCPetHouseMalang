@@ -396,6 +396,8 @@ document.getElementById('logout-form').submit();">
                                     class="bx bxl-facebook"></i></a>
                             <a href="https://www.instagram.com/bcpethouse/" class="instagram"><i
                                     class="bx bxl-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@bcpethouse" class="tiktok"><i
+                                    class="bx bxl-tiktok"></i></a>
                         </div>
                     </div>
 

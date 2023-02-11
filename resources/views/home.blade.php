@@ -107,7 +107,7 @@ document.getElementById('logout-form').submit();">
                 <div class="row content">
                     <div class="center" align="center">
                         <p>
-                            BC Pet House adalah Salah satu pethop yang berada di malang tepatnya berada di Dinoyo, dan Batu kota
+                            BC Pet House adalah salah satu petshop yang berada di malang yang memiliki 2 cabang. Pada cabang ke 1<br> yaitu berada di Dinoyo, dan cabang 2 berada di Batu kabupaten
                             Malang.
                         </p>
                         <p>
@@ -115,7 +115,7 @@ document.getElementById('logout-form').submit();">
                         </p>
                         <p>
                             jam buka adalah setiap hari namun dikhususkan pada hari minggu BC Pet House buka hingga jam
-                            3 sore
+                            3 sore.
                         </p>
                     </div>
                 </div>
@@ -365,6 +365,9 @@ document.getElementById('logout-form').submit();">
                             Jl. MT. Haryono XI No.338A, Dinoyo,<br>
                             Kec. Lowokwaru, Kota Malang,<br>
                             Jawa Timur, Indonesia <br><br>
+                            Jl. Raya Sengkaling No.184, Jetis, Mulyoagung,<br>
+                            Kec. Dau. Kabupaten Malang,<br>
+                            Jawa Timur, Indonesia<br><br>
                             <strong>No.Telp:</strong> 0857-0818-0182<br>
                         </p>
                     </div>
